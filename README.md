@@ -8,4 +8,4 @@
 * Alize Nguyen - Project Manager
 
 ## Git Review:
-![Github Review Diagram](assets/images/wireframe-02.png)
+![Github Review Diagram](/git-flowchart.pdf)
