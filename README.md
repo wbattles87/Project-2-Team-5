@@ -2,7 +2,7 @@
 
 ## Team Members:
 * Mark Kazanski - GitHub Master
-* Adeel 
+* Adeel Ahmed
 * Will Battles
 * Batli Joselevitz
 * Alize Nguyen - Project Manager
