@@ -7,5 +7,8 @@
 * Batli Joselevitz
 * Alize Nguyen - Project Manager
 
-## Git Review:
+## Project Goal:
+The web app will allow users to collect, organize, and store recipes that they come across on the web by inputing a URL/utilizing a bookmarklet.
+
+## Git Review (for team purposes):
 ![Github Review Diagram](/git-flowchart.jpg)
