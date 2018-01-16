@@ -2,7 +2,8 @@ html {
   font-size: 62.5%; }
 
 .navbar {
-  background-color: #FFF; }
+  background-color: #FFF;
+  border-radius: none; }
 
 .mainimg {
   position: absolute;
