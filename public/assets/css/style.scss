@@ -1,7 +1,8 @@
 @import 'fonts';
 
 /*FONT VARIABLES*/
-$logo-font : PathwaysRough,
+
+$logo-font: PathwaysRough,
 sans-serif;
 $header-font: LeagueGothic,
 sans-serif;
@@ -9,6 +10,7 @@ $body-font: Peleguer,
 serif;
 
 /*COLOR VARIABLES*/
+
 $orange: #F07222;
 $red: #E44125;
 $green: #6B7649;
@@ -22,20 +24,22 @@ html {
     font-size: 62.5%;
 }
 
-html,body
-{
+html,
+body {
     width: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
-    overflow-y:auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 a {
     color: $cream;
 }
 
+
 /*HOME - NAVBAR AND JUMBOTRON*/
+
 .navbar {
     background-color: #FFF;
     border-radius: 0;
@@ -100,7 +104,6 @@ a {
         letter-spacing: 1.5rem;
         color: white;
     }
-
     .infotext {
         font-family: $body-font;
         font-size: 2.5rem;
@@ -108,7 +111,6 @@ a {
         letter-spacing: 1.5rem;
         padding-top: 2rem;
     }
-
     .signin-btn {
         font-family: $header-font;
         font-size: 2rem;
@@ -120,17 +122,14 @@ a {
         padding-left: 4rem;
         padding-right: 4rem;
     }
-
     .signin-btn:hover {
         background-color: $green;
     }
-
     .form-control {
         font-family: $body-font;
         font-size: 2.75rem;
         border-radius: 0;
     }
-
     #signuptext {
         font-family: PeleguerItalic;
         color: $cream;
@@ -152,25 +151,21 @@ a {
         letter-spacing: 3.5rem;
         padding-top: 8rem;
     }
-
     #recipes-subtext {
         font-family: PeleguerItalic;
         letter-spacing: 0.2rem;
         font-size: 4.5rem;
         margin-top: -2.5rem;
     }
-
     .des-header {
         font-family: $header-font;
         font-size: 7.5rem;
         letter-spacing: 0.2rem;
         margin-top: 6rem;
     }
-
     .des-header-two {
         margin-top: 2rem;
     }
-
     .read-more {
         font-family: $body-font;
         font-size: 2rem;
@@ -183,12 +178,12 @@ a {
         margin-bottom: 4rem;
         padding: 1.5rem 5rem 1rem 5rem;
     }
-
     .read-more:hover {
         background-color: $green;
         border: none;
     }
 }
+
 
 /*HOME - BODY (ABOUT AND HOW IT WORKS)*/
 
@@ -227,7 +222,15 @@ a {
     background-color: $red;
     padding: 10rem;
     width: 100%;
-    height: 70rem;
+    height: 90rem;
     left: 0rem !important;
     margin-top: 15rem;
+}
+
+.howitworks-block {
+    .timer-img {
+        width: 20rem;
+        margin-left: 40%;
+        margin-top: 4rem;
+    }
 }
