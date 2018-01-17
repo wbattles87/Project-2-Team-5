@@ -83,7 +83,7 @@ a {
 }
 
 .loginscreen-right {
-    position: relative;
+    position: absolute;
     display: inline-block;
     background-color: $red;
     opacity: 0.90;
@@ -202,6 +202,15 @@ a {
     width: 30rem;
     margin-left: 70rem;
     margin-top: 20rem;
+}
+
+.about-text {
+    font-family: $body-font;
+    color: $green;
+    font-size: 3.75rem;
+    margin-top: 4rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
 }
 
 #about-header {
