@@ -24,11 +24,14 @@ html {
 .navbar {
     background-color: #FFF;
     border-radius: none;
+    height: 10rem;
 }
 
 .navbar-brand {
     font-family: $logo-font;
+    font-size: 5rem;
     color: $orange;
+    padding-left: 5rem;
 }
 
 .mainimg {

@@ -34,11 +34,14 @@ html {
 /*NAVBAR AND JUMBOTRON*/
 .navbar {
   background-color: #FFF;
-  border-radius: none; }
+  border-radius: none;
+  height: 10rem; }
 
 .navbar-brand {
   font-family: PathwaysRough, sans-serif;
-  color: #F07222; }
+  font-size: 5rem;
+  color: #F07222;
+  padding-left: 5rem; }
 
 .mainimg {
   position: absolute;
