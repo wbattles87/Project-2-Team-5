@@ -275,3 +275,19 @@ footer {
     padding-top: 2rem;
     margin-left: 6rem;
 }
+
+.footertext:hover {
+    color: $green;
+}
+
+#footercopyright {
+    margin-right: 6rem;
+}
+
+#footercopyright:hover {
+    color: $black;
+}
+
+#footerleft {
+    margin-left: 6rem;
+}
