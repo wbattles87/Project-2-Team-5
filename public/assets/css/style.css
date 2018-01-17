@@ -27,9 +27,11 @@
   font-style: italic; }
 /*FONT VARIABLES*/
 /*COLOR VARIABLES*/
+/*MAIN SETUP*/
 html {
   font-size: 62.5%; }
 
+/*NAVBAR AND JUMBOTRON*/
 .navbar {
   background-color: #FFF;
   border-radius: none; }
