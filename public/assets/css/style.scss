@@ -57,6 +57,11 @@ a {
     height: 115rem;
 }
 
+.header-info {
+    position: relative;
+    top: -2.1rem;
+}
+
 .loginscreen {
     position: absolute;
     display: block;
@@ -65,9 +70,7 @@ a {
     padding: 13em 7em 7em 7em;
     width: 80rem;
     height: 83.83rem;
-    top: -2.1rem !important;
     right: 0em !important;
-    bottom: 0em !important;
 }
 
 .loginscreen {
