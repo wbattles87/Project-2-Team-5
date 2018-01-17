@@ -11,7 +11,8 @@ serif;
 /*COLOR VARIABLES*/
 $orange: #F07222;
 $red: #E44125;
-$green: #E44125;
+$green: #6B7649;
+$lightgreen: #AAD037;
 $cream: #EEE5D0;
 $black: #0E0A08;
 
@@ -34,20 +35,29 @@ a {
 .navbar-right {
     font-family: $header-font;
     font-size: 2.5rem;
-    padding-right: 5rem;
+    padding-right: 6rem;
     padding-top: 2rem;
 }
 
 .navtext {
     color: $black;
     letter-spacing: 0.3rem;
+    margin-left: 6rem;
+}
+
+.navtext:hover {
+    color: $green;
 }
 
 .navbar-brand {
     font-family: $logo-font;
     font-size: 5rem;
     color: $orange;
-    padding-left: 5rem;
+    padding-left: 10rem;
+}
+
+.navbar-brand:hover {
+    color: $green;
 }
 
 .mainimg {
@@ -62,18 +72,18 @@ a {
     top: -2.1rem;
 }
 
-.loginscreen {
+.loginscreen-right {
     position: absolute;
     display: block;
     background-color: $red;
-    opacity: 0.95;
+    opacity: 0.90;
     padding: 13em 7em 7em 7em;
-    width: 80rem;
+    width: 70rem;
     height: 83.83rem;
     right: 0em !important;
 }
 
-.loginscreen {
+.loginscreen-right {
     #logintext {
         font-family: $header-font;
         font-size: 4rem;
@@ -101,11 +111,71 @@ a {
         padding-right: 4rem;
     }
 
+    .signin-btn:hover {
+        background-color: $green;
+    }
+
+    .form-control {
+        font-family: $body-font;
+        font-size: 2.75rem;
+        border-radius: 0;
+    }
+
     #signuptext {
         font-family: PeleguerItalic;
         color: $cream;
         font-size: 2.5rem;
         letter-spacing: 0.3rem;
         margin-top: 4.5rem;
+    }
+}
+
+.loginscreen-left {
+    color: white;
+    margin-left: 10rem;
+}
+
+.loginscreen-left {
+    #recipes-text {
+        font-family: $header-font;
+        font-size: 19rem;
+        letter-spacing: 3.5rem;
+        padding-top: 8rem;
+    }
+
+    #recipes-subtext {
+        font-family: PeleguerItalic;
+        letter-spacing: 0.2rem;
+        font-size: 4.5rem;
+        margin-top: -2.5rem;
+    }
+
+    .des-header {
+        font-family: $header-font;
+        font-size: 7.5rem;
+        letter-spacing: 0.2rem;
+        margin-top: 6rem;
+    }
+
+    .des-header-two {
+        margin-top: 2rem;
+    }
+
+    .read-more {
+        font-family: $body-font;
+        font-size: 2rem;
+        letter-spacing: 0.6rem;
+        background-color: transparent;
+        border-width: 0.1rem;
+        border-color: white;
+        border-radius: 0;
+        margin-top: 6.5rem;
+        margin-bottom: 4rem;
+        padding: 1.5rem 5rem 1rem 5rem;
+    }
+
+    .read-more:hover {
+        background-color: $green;
+        border: none;
     }
 }
