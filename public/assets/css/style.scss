@@ -230,7 +230,24 @@ a {
 .howitworks-block {
     .timer-img {
         width: 20rem;
-        margin-left: 40%;
+        margin-left: 42%;
         margin-top: 4rem;
+    }
+    #howitworks-header {
+        font-family: $header-font;
+        font-size: 6rem;
+        letter-spacing: 2rem;
+        color: $cream;
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+    }
+    .howitworks-text {
+        font-family: $body-font;
+        color: $cream;
+        font-size: 3.75rem;
+        text-align: center;
+        padding-left: 7%;
+        padding-right: 7%;
     }
 }
