@@ -1,68 +1,156 @@
-body {
-  width: 99%;
-  height: 900px;
-  background-color: #fc6;
-}
+/* FONTS */
+@font-face {
+  font-family: PathwaysRough;
+  src: url(../fonts/PathwaysRough-Regular.otf); }
+@font-face {
+  font-family: LeagueGothic;
+  src: url(../fonts/LeagueGothic-Regular.otf); }
+@font-face {
+  font-family: LeagueGothicItalic;
+  src: url(../fonts/LeagueGothic-Italic.otf);
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: Peleguer;
+  src: url(../fonts/Peleguer-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: PeleguerBold;
+  src: url(../fonts/Peleguer-Bold.ttf) format("truetype");
+  font-weight: Bold;
+  font-style: normal; }
+@font-face {
+  font-family: PeleguerItalic;
+  src: url(../fonts/Peleguer-Italic.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+/*FONT VARIABLES*/
+/*COLOR VARIABLES*/
+/*MAIN SETUP*/
+html {
+  font-size: 62.5%; }
 
-#top-bar {
-  margin-top: 28px;
-}
+a {
+  color: #EEE5D0; }
 
-.spacing-reset {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
+/*HOME - NAVBAR AND JUMBOTRON*/
+.navbar {
+  background-color: #FFF;
+  border-radius: none;
+  height: 10rem; }
 
-.list-reset {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  border: 0;
-}
+.navbar-right {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2.5rem;
+  padding-right: 6rem;
+  padding-top: 2rem; }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 990px;
-  }
-}
+.navtext {
+  color: #0E0A08;
+  letter-spacing: 0.3rem;
+  margin-left: 6rem; }
 
-@media (min-width: 992px) {
-  .container {
-    width: 990px;
-  }
-}
+.navtext:hover {
+  color: #6B7649; }
 
-.enter_section {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
+.navbar-brand {
+  font-family: PathwaysRough, sans-serif;
+  font-size: 5rem;
+  color: #F07222;
+  padding-left: 10rem; }
 
-#enter_text {
-  width: 400px;
-  height: 80px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: auto;
-  font-size: 38px;
-}
+.navbar-brand:hover {
+  color: #6B7649; }
 
-.task {
-  border-color: black;
-  border-style: solid;
-  border-width: 3px;
-}
+.mainimg {
+  position: absolute;
+  z-index: -1;
+  top: -20rem !important;
+  height: 115rem; }
 
-.button-size {
-  padding-bottom: 20px;
-}
+.header-info {
+  position: relative;
+  top: -2.1rem; }
 
-#text-enter-button {
-  margin-top: 10px;
-  margin-bottom: 18px;
-}
+.loginscreen-right {
+  position: absolute;
+  display: block;
+  background-color: #E44125;
+  opacity: 0.90;
+  padding: 13em 7em 7em 7em;
+  width: 70rem;
+  height: 83.83rem;
+  right: 0em !important; }
 
-h1 {
-  color: #f30;
-}
+.loginscreen-right #logintext {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 4rem;
+  letter-spacing: 1.5rem;
+  color: white; }
+.loginscreen-right .infotext {
+  font-family: Peleguer, serif;
+  font-size: 2.5rem;
+  color: white;
+  letter-spacing: 1.5rem;
+  padding-top: 2rem; }
+.loginscreen-right .signin-btn {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  color: #EEE5D0;
+  border-radius: 0%;
+  background-color: #F07222;
+  margin-top: 5rem;
+  padding-left: 4rem;
+  padding-right: 4rem; }
+.loginscreen-right .signin-btn:hover {
+  background-color: #6B7649; }
+.loginscreen-right .form-control {
+  font-family: Peleguer, serif;
+  font-size: 2.75rem;
+  border-radius: 0; }
+.loginscreen-right #signuptext {
+  font-family: PeleguerItalic;
+  color: #EEE5D0;
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+  margin-top: 4.5rem; }
+
+.loginscreen-left {
+  color: white;
+  margin-left: 10rem; }
+
+.loginscreen-left #recipes-text {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 19rem;
+  letter-spacing: 3.5rem;
+  padding-top: 8rem; }
+.loginscreen-left #recipes-subtext {
+  font-family: PeleguerItalic;
+  letter-spacing: 0.2rem;
+  font-size: 4.5rem;
+  margin-top: -2.5rem; }
+.loginscreen-left .des-header {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 7.5rem;
+  letter-spacing: 0.2rem;
+  margin-top: 6rem; }
+.loginscreen-left .des-header-two {
+  margin-top: 2rem; }
+.loginscreen-left .read-more {
+  font-family: Peleguer, serif;
+  font-size: 2rem;
+  letter-spacing: 0.6rem;
+  background-color: transparent;
+  border-width: 0.1rem;
+  border-color: white;
+  border-radius: 0;
+  margin-top: 6.5rem;
+  margin-bottom: 4rem;
+  padding: 1.5rem 5rem 1rem 5rem; }
+.loginscreen-left .read-more:hover {
+  background-color: #6B7649;
+  border: none; }
+
+/*# sourceMappingURL=style.css.map */
