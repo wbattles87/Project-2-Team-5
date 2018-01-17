@@ -1,9 +1,42 @@
+/* FONTS */
+@font-face {
+  font-family: PathwaysRough;
+  src: url(../fonts/PathwaysRough-Regular.otf); }
+@font-face {
+  font-family: LeagueGothic;
+  src: url(../fonts/LeagueGothic-Regular.otf); }
+@font-face {
+  font-family: LeagueGothicItalic;
+  src: url(../fonts/LeagueGothic-Italic.otf);
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: Peleguer;
+  src: url(../fonts/Peleguer-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: PeleguerBold;
+  src: url(../fonts/Peleguer-Bold.ttf) format("truetype");
+  font-weight: Bold;
+  font-style: normal; }
+@font-face {
+  font-family: PeleguerItalic;
+  src: url(../fonts/Peleguer-Italic.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+/*FONT VARIABLES*/
+/*COLOR VARIABLES*/
 html {
   font-size: 62.5%; }
 
 .navbar {
   background-color: #FFF;
   border-radius: none; }
+
+.navbar-brand {
+  font-family: PathwaysRough, sans-serif;
+  color: #F07222; }
 
 .mainimg {
   position: absolute;
