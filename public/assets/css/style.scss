@@ -27,6 +27,18 @@ html {
     height: 10rem;
 }
 
+.navbar-right {
+    font-family: $header-font;
+    font-size: 2.5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+}
+
+.navtext {
+    color: $black;
+    letter-spacing: 0.3rem;
+}
+
 .navbar-brand {
     font-family: $logo-font;
     font-size: 5rem;
