@@ -153,4 +153,23 @@ a {
   background-color: #6B7649;
   border: none; }
 
+/*HOME - BODY (ABOUT AND HOW IT WORKS)*/
+.tile-img {
+  position: absolute;
+  z-index: -1;
+  width: 100%; }
+
+.lists-img {
+  width: 30rem;
+  margin-left: 70rem;
+  margin-top: 20rem; }
+
+#about-header {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 6rem;
+  letter-spacing: 2rem;
+  color: #6B7649;
+  text-align: center;
+  margin-top: 5rem; }
+
 /*# sourceMappingURL=style.css.map */

@@ -179,3 +179,26 @@ a {
         border: none;
     }
 }
+
+/*HOME - BODY (ABOUT AND HOW IT WORKS)*/
+
+.tile-img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+}
+
+.lists-img {
+    width: 30rem;
+    margin-left: 70rem;
+    margin-top: 20rem;
+}
+
+#about-header {
+    font-family: $header-font;
+    font-size: 6rem;
+    letter-spacing: 2rem;
+    color: $green;
+    text-align: center;
+    margin-top: 5rem;
+}
