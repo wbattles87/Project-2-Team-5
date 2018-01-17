@@ -48,7 +48,50 @@ html {
 
 .mainimg {
     position: absolute;
-    top: -1.6rem;
     z-index: -1;
-    width: 100%;
+    top: -20rem !important;
+    height: 115rem;
+}
+
+.loginscreen {
+    position: absolute;
+    display: block;
+    background-color: $red;
+    opacity: 0.95;
+    padding: 13em 7em 7em 7em;
+    width: 80rem;
+    height: 83.85rem;
+    top: 10rem !important;
+    right: 0em !important;
+    bottom: 0em !important;
+    will-change: bottom,left;
+}
+
+.loginscreen {
+    #logintext {
+        font-family: $header-font;
+        font-size: 4rem;
+        letter-spacing: 1.5rem;
+        color: white;
+    }
+
+    .infotext {
+        font-family: $body-font;
+        font-size: 2.5rem;
+        color: white;
+        letter-spacing: 1.5rem;
+        padding-top: 2rem;
+    }
+
+    .signin-btn {
+        font-family: $header-font;
+        font-size: 2rem;
+        letter-spacing: 0.5rem;
+        color: $cream;
+        border-radius: 0%;
+        background-color: $orange;
+        margin-top: 5rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 }
