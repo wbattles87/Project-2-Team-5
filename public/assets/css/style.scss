@@ -1,7 +1,8 @@
 @import 'fonts';
 
 /*FONT VARIABLES*/
-$logo-font : PathwaysRough,
+
+$logo-font: PathwaysRough,
 sans-serif;
 $header-font: LeagueGothic,
 sans-serif;
@@ -9,6 +10,7 @@ $body-font: Peleguer,
 serif;
 
 /*COLOR VARIABLES*/
+
 $orange: #F07222;
 $red: #E44125;
 $green: #6B7649;
@@ -22,20 +24,25 @@ html {
     font-size: 62.5%;
 }
 
-html,body
-{
+html,
+body {
     width: 100%;
+    min-height: 100%;
+    position: relative;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
-    overflow-y:auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 0.5rem;
 }
 
 a {
     color: $cream;
 }
 
+
 /*HOME - NAVBAR AND JUMBOTRON*/
+
 .navbar {
     background-color: #FFF;
     border-radius: 0;
@@ -74,6 +81,7 @@ a {
     position: absolute;
     z-index: -1;
     top: -20rem !important;
+    width: 100%;
     height: 115rem;
 }
 
@@ -84,13 +92,12 @@ a {
 
 .loginscreen-right {
     position: absolute;
-    display: inline-block;
     background-color: $red;
     opacity: 0.90;
     padding: 13em 7em 7em 7em;
     width: 70rem;
     height: 83.83rem;
-    left: 0rem !important;
+    right: 0rem !important;
 }
 
 .loginscreen-right {
@@ -100,7 +107,6 @@ a {
         letter-spacing: 1.5rem;
         color: white;
     }
-
     .infotext {
         font-family: $body-font;
         font-size: 2.5rem;
@@ -108,7 +114,6 @@ a {
         letter-spacing: 1.5rem;
         padding-top: 2rem;
     }
-
     .signin-btn {
         font-family: $header-font;
         font-size: 2rem;
@@ -120,17 +125,14 @@ a {
         padding-left: 4rem;
         padding-right: 4rem;
     }
-
     .signin-btn:hover {
         background-color: $green;
     }
-
     .form-control {
         font-family: $body-font;
         font-size: 2.75rem;
         border-radius: 0;
     }
-
     #signuptext {
         font-family: PeleguerItalic;
         color: $cream;
@@ -152,25 +154,21 @@ a {
         letter-spacing: 3.5rem;
         padding-top: 8rem;
     }
-
     #recipes-subtext {
         font-family: PeleguerItalic;
         letter-spacing: 0.2rem;
         font-size: 4.5rem;
         margin-top: -2.5rem;
     }
-
     .des-header {
         font-family: $header-font;
         font-size: 7.5rem;
         letter-spacing: 0.2rem;
         margin-top: 6rem;
     }
-
     .des-header-two {
         margin-top: 2rem;
     }
-
     .read-more {
         font-family: $body-font;
         font-size: 2rem;
@@ -183,12 +181,12 @@ a {
         margin-bottom: 4rem;
         padding: 1.5rem 5rem 1rem 5rem;
     }
-
     .read-more:hover {
         background-color: $green;
         border: none;
     }
 }
+
 
 /*HOME - BODY (ABOUT AND HOW IT WORKS)*/
 
@@ -200,7 +198,7 @@ a {
 
 .lists-img {
     width: 30rem;
-    margin-left: 70rem;
+    margin-left: 40%;
     margin-top: 20rem;
 }
 
@@ -209,8 +207,8 @@ a {
     color: $green;
     font-size: 3.75rem;
     margin-top: 4rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
 #about-header {
@@ -220,4 +218,76 @@ a {
     color: $green;
     text-align: center;
     margin-top: 5rem;
+}
+
+.howitworks-block {
+    position: relative;
+    background-color: $red;
+    padding: 10rem;
+    width: 100%;
+    height: 90rem;
+    left: 0rem !important;
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+}
+
+.howitworks-block {
+    .timer-img {
+        width: 20rem;
+        margin-left: 42%;
+        margin-top: 4rem;
+    }
+    #howitworks-header {
+        font-family: $header-font;
+        font-size: 6rem;
+        letter-spacing: 2rem;
+        color: $cream;
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+    }
+    .howitworks-text {
+        font-family: $body-font;
+        color: $cream;
+        font-size: 3.75rem;
+        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+/*HOME - FOOTER*/
+
+footer {
+    position: absolute;
+    background-color: white; 
+    width: 100%;
+    height: 6rem;
+    bottom: 0;
+}
+
+.footertext {
+    font-family: $header-font;
+    font-size: 2.5rem;
+    color: $black;
+    letter-spacing: 0.3rem;
+    padding-right: 6rem;
+    padding-top: 2rem;
+    margin-left: 6rem;
+}
+
+.footertext:hover {
+    color: $green;
+}
+
+#footercopyright {
+    margin-right: 6rem;
+}
+
+#footercopyright:hover {
+    color: $black;
+}
+
+#footerleft {
+    margin-left: 6rem;
 }
