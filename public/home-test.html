@@ -50,9 +50,9 @@
                 <div class="loginscreen-right">
                     <h3 id="logintext">LOGIN</h3>
                     <h4 class="infotext">E-MAIL</h4>
-                    <input type="text" class="form-control" aria-label="Username">
+                    <input type="text" class="form-control" aria-label="E-mail">
                     <h4 class="infotext">PASSWORD</h4>
-                    <input type="text" class="form-control" aria-label="Username">
+                    <input type="text" class="form-control" aria-label="password">
                     <button class="btn signin-btn" type="submit">SIGN IN</button>
                     <p id="signuptext">Don’t have an account?
                         <a class="innersignuptext" data-toggle="modal" data-target="#signup-modal">Sign up!</a>
@@ -103,17 +103,17 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="navbar-brand navigator" data-target="#menuModal">
-                        <img alt="Brand" id="navimg" src="assets/images/menu.png" class="close" data-dismiss="modal" aria-label="Close" id="modalclose">
-                        <p>CLOSE</p>
-                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <h3 id="signup-MH">SIGN UP</h3>
+                    <h4 class="signup-textM">E-MAIL</h4>
+                    <input type="text" class="form-control" aria-label="Username">
+                    <h4 class="signup-textM">PASSWORD</h4>
+                    <input type="text" class="form-control" aria-label="password">
+                    <h4 class="signup-textM">CONFIRM PASSWORD</h4>
+                    <input type="text" class="form-control" aria-label="confirm-password">
+                    <button class="btn signup-btn" type="submit">SIGN UP</button>
                 </div>
             </div>
         </div>

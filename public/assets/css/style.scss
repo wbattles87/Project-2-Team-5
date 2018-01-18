@@ -292,5 +292,65 @@ footer {
     margin-left: 6rem;
 }
 
+/* MODAL CONTENT (HOME) */
+
+.modal-dialog {
+    width: 60%;
+    height: 80%;
+    opacity: 0.9;
+}
+
+.modal-content {
+    background-color: $orange;
+    color: white;
+    height: auto;
+    min-height: 100%;
+}
+
+.modal-header {
+    border: none;
+}
+
+.modal-body {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.modal-body {
+    #signup-MH {
+        font-family: $header-font;
+        font-size: 4rem;
+        letter-spacing: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .signup-textM {
+        font-family: $body-font;
+        font-size: 2rem;
+        letter-spacing: 1rem;
+        padding-top: 2rem;
+    }
+    .form-control {
+        font-family: $body-font;
+        font-size: 2.75rem;
+        border-radius: 0;
+    }
+    .signup-btn {
+        font-family: $header-font;
+        font-size: 2rem;
+        letter-spacing: 0.5rem;
+        color: $cream;
+        border-radius: 0%;
+        background-color: $green;
+        margin-top: 6rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .signup-btn:hover {
+        background-color: $red;
+    }
+}
+
+
 /* =============================================================================================== */
 @import 'mediaqueries';
