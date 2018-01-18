@@ -406,5 +406,8 @@ footer {
 
   footer {
     display: none; } }
+@media only screen and (max-width: 480px) {
+  .navbar-brand {
+    font-size: 4rem; } }
 
 /*# sourceMappingURL=style.css.map */

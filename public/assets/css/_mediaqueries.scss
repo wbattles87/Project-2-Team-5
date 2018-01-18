@@ -190,6 +190,10 @@
     }
 }
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+    .navbar-brand {
+        font-size: 4rem;
+    }
+}
 
 @media only screen and (max-width: 320px) {}
