@@ -36,11 +36,19 @@ body {
     padding-bottom: 0.5rem;
 }
 
+p {
+    font-family: $body-font;
+}
+
+h1, h2, h3 {
+    font-family: $header-font;
+}
+
 a {
     color: $cream;
 }
 
-
+/* ===============================================HOME PAGE================================================ */
 /*HOME - NAVBAR AND JUMBOTRON*/
 
 .navbar {
@@ -350,7 +358,99 @@ footer {
         background-color: $red;
     }
 }
+/* ===============================================USER PAGE================================================ */
+th {
+    font-family: $header-font;
+    font-size: 2.1rem;
+    letter-spacing: 0.3rem;
+    color: $black;
+}
 
+.navbar-user {
+    background-color: $red;
+}
 
-/* =============================================================================================== */
+.navbar-brand-user {
+    color: $cream;
+}
+
+.navbar-right-user {
+    color: $cream;
+}
+
+.searchaddbar {
+    margin-top: 4rem;
+}
+
+.input-md {
+    font-family: $body-font;
+    font-size: 2rem;
+    border: none;
+    border-radius: 0;
+    background-color: $cream;
+}
+
+.btn-md {
+    border-radius:0;
+    background-color: $green;
+    border-color: $green;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.btn-md:hover {
+    background-color: $orange;
+    border-color: $orange;
+}
+
+.table-icon {
+    height: 4rem;
+    padding-right: 5rem;
+}
+
+.table-header {
+    font-family: $header-font;
+    font-size: 4.5rem;
+    letter-spacing: 1.5rem;
+    display: block;
+    text-align: center;
+    background-color: $orange;
+    color: $cream;
+    padding: 1rem 2rem 0.5rem 2rem;
+    margin-top: 8rem;
+}
+/* ===============================================INGREDIENT PAGE ================================================ */
+.ingredient-title {
+    font-size: 5rem;
+    letter-spacing: 1rem;
+    color: $red;
+    margin-top: 6rem;
+}
+
+.ingredient-header {
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+    color: $orange;
+    margin-top: 5rem;
+}
+
+.ingredient-text {
+    font-size: 2.25rem;
+}
+
+.ingredient-btn {
+    font-family: $header-font;
+    font-size: 2rem;
+    color: $cream;
+    background-color: $red;
+    border-radius: 0;
+    padding: 0.5rem 4rem 0.5rem 4rem;
+    margin-top: 6rem;
+    margin-right: 7rem;
+}
+
+.ingredient-btn:hover {
+    background-color: $green;
+}
+/* ======================================================================================================== */
 @import 'mediaqueries';

@@ -42,9 +42,16 @@ body {
   overflow-y: auto;
   padding-bottom: 0.5rem; }
 
+p {
+  font-family: Peleguer, serif; }
+
+h1, h2, h3 {
+  font-family: LeagueGothic, sans-serif; }
+
 a {
   color: #EEE5D0; }
 
+/* ===============================================HOME PAGE================================================ */
 /*HOME - NAVBAR AND JUMBOTRON*/
 .navbar {
   background-color: #FFF;
@@ -296,7 +303,88 @@ footer {
 .modal-body .signup-btn:hover {
   background-color: #E44125; }
 
-/* =============================================================================================== */
+/* ===============================================USER PAGE================================================ */
+th {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2.1rem;
+  letter-spacing: 0.3rem;
+  color: #0E0A08; }
+
+.navbar-user {
+  background-color: #E44125; }
+
+.navbar-brand-user {
+  color: #EEE5D0; }
+
+.navbar-right-user {
+  color: #EEE5D0; }
+
+.searchaddbar {
+  margin-top: 4rem; }
+
+.input-md {
+  font-family: Peleguer, serif;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0;
+  background-color: #EEE5D0; }
+
+.btn-md {
+  border-radius: 0;
+  background-color: #6B7649;
+  border-color: #6B7649;
+  padding-left: 4rem;
+  padding-right: 4rem; }
+
+.btn-md:hover {
+  background-color: #F07222;
+  border-color: #F07222; }
+
+.table-icon {
+  height: 4rem;
+  padding-right: 5rem; }
+
+.table-header {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 4.5rem;
+  letter-spacing: 1.5rem;
+  display: block;
+  text-align: center;
+  background-color: #F07222;
+  color: #EEE5D0;
+  padding: 1rem 2rem 0.5rem 2rem;
+  margin-top: 8rem; }
+
+/* ===============================================INGREDIENT PAGE ================================================ */
+.ingredient-title {
+  font-size: 5rem;
+  letter-spacing: 1rem;
+  color: #E44125;
+  margin-top: 6rem; }
+
+.ingredient-header {
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: #F07222;
+  margin-top: 5rem; }
+
+.ingredient-text {
+  font-size: 2.25rem; }
+
+.ingredient-btn {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2rem;
+  color: #EEE5D0;
+  background-color: #E44125;
+  border-radius: 0;
+  padding: 0.5rem 4rem 0.5rem 4rem;
+  margin-top: 6rem;
+  margin-right: 7rem; }
+
+.ingredient-btn:hover {
+  background-color: #6B7649; }
+
+/* ======================================================================================================== */
 @media only screen and (max-width: 1366px) {
   /*HOME PAGE*/
   .navtext {
@@ -468,7 +556,22 @@ footer {
   .modal-body .signup-textM {
     font-size: 1.75rem; }
   .modal-body .form-control {
-    font-size: 1.5rem; } }
+    font-size: 1.5rem; }
+
+  /* ===============================================USER PAGE================================================ */
+  .table-header {
+    padding-top: 1rem;
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem; }
+
+  .table-icon {
+    height: 2.5rem;
+    padding-right: 3rem; }
+
+  /* ===============================================INGREDIENT PAGE================================================ */
+  .ingredient-btn {
+    padding: 1rem;
+    margin-right: 0.5rem; } }
 @media only screen and (max-width: 480px) {
   .navbar-brand {
     font-size: 4rem; }
