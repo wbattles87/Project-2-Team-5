@@ -92,7 +92,7 @@ a {
   padding: 13em 7em 7em 7em;
   width: 70rem;
   height: 83.83rem;
-  right: 0rem !important; }
+  right: 0rem; }
 
 .loginscreen-right #logintext {
   font-family: LeagueGothic, sans-serif;
@@ -249,5 +249,165 @@ footer {
 
 #footerleft {
   margin-left: 6rem; }
+
+/* =============================================================================================== */
+@media only screen and (max-width: 1366px) {
+  /*HOME PAGE*/
+  .navtext {
+    margin-left: 1rem; }
+
+  .loginscreen-right {
+    width: 50rem;
+    height: 83.83rem; }
+
+  .loginscreen-left #recipes-text {
+    font-size: 9.5rem;
+    letter-spacing: 2rem;
+    padding-top: 10rem; }
+  .loginscreen-left #recipes-subtext {
+    font-size: 4.5rem; }
+  .loginscreen-left .des-header {
+    font-size: 4rem; }
+
+  .tile-img {
+    width: none;
+    height: 120rem; }
+
+  .lists-img {
+    width: 18rem;
+    margin-left: 40%;
+    margin-top: 30rem; }
+
+  .about-text {
+    font-size: 2.5rem; }
+
+  .howitworks-block {
+    padding: 4rem;
+    height: 70rem;
+    margin-top: 15rem; }
+
+  .howitworks-block .timer-img {
+    width: 15rem;
+    margin-top: 5rem; }
+  .howitworks-block .howitworks-text {
+    font-size: 2.5rem; } }
+@media only screen and (max-width: 979px) {
+  /*HOME PAGE*/
+  .navbar-right {
+    display: none; }
+
+  .mainimg {
+    top: -20rem !important;
+    width: 100%;
+    height: 90rem; }
+
+  .loginscreen-right {
+    position: absolute;
+    padding: 2em 2em 2em 2.5em;
+    width: 100%;
+    height: 59rem; }
+
+  .loginscreen-right .infotext {
+    font-size: 1.5rem; }
+  .loginscreen-right #signuptext {
+    font-size: 1.75rem; }
+
+  .loginscreen-left {
+    padding-left: 2rem; }
+
+  .loginscreen-left #recipes-text {
+    padding-top: 3rem; }
+  .loginscreen-left #recipes-subtext {
+    font-size: 2.75rem;
+    margin-top: -2rem; }
+  .loginscreen-left .des-header {
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    margin-top: 6rem; }
+
+  .tile-img {
+    width: none;
+    height: 90rem; }
+
+  .lists-img {
+    margin-top: 10rem; }
+
+  #about-header {
+    font-size: 4.5rem;
+    letter-spacing: 2rem; }
+
+  .howitworks-block {
+    padding: 2rem;
+    margin-top: 10rem; }
+
+  .howitworks-block #howitworks-header {
+    font-size: 4.5rem; }
+  .howitworks-block .howitworks-text {
+    font-size: 2.5rem; } }
+@media only screen and (max-width: 767px) {
+  /*HOME PAGE*/
+  .mainimg {
+    height: 70rem; }
+
+  .loginscreen-left #recipes-text {
+    padding-top: 1rem;
+    font-size: 10rem; }
+  .loginscreen-left #recipes-subtext {
+    font-size: 2.75rem;
+    margin-top: -2rem; }
+  .loginscreen-left .des-header {
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    margin-top: 2rem; }
+  .loginscreen-left .read-more {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2.8rem;
+    padding: 2rem 3rem 1rem 3rem; }
+
+  .loginscreen-right {
+    position: absolute;
+    opacity: 1;
+    height: 52rem; }
+
+  .tile-img {
+    margin-top: 45rem;
+    width: 160%;
+    height: 90rem; }
+
+  .lists-img {
+    margin-top: 55rem;
+    margin-left: 33%;
+    width: 15rem; }
+
+  #about-header {
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem; }
+
+  .about-text {
+    font-size: 2rem;
+    margin-top: 4rem; }
+
+  .howitworks-block {
+    padding: 1rem;
+    margin-top: 7rem;
+    height: 60rem;
+    margin-bottom: 0rem; }
+
+  .howitworks-block .timer-img {
+    width: 10rem;
+    margin-left: 37%; }
+  .howitworks-block #howitworks-header {
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem; }
+  .howitworks-block .howitworks-text {
+    font-size: 2rem;
+    margin-top: 1rem; }
+
+  footer {
+    display: none; } }
+@media only screen and (max-width: 480px) {
+  .navbar-brand {
+    font-size: 4rem; } }
 
 /*# sourceMappingURL=style.css.map */

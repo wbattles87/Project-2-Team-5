@@ -97,7 +97,7 @@ a {
     padding: 13em 7em 7em 7em;
     width: 70rem;
     height: 83.83rem;
-    right: 0rem !important;
+    right: 0rem;
 }
 
 .loginscreen-right {
@@ -291,3 +291,6 @@ footer {
 #footerleft {
     margin-left: 6rem;
 }
+
+/* =============================================================================================== */
+@import 'mediaqueries';
