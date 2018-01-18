@@ -45,6 +45,7 @@ body {
 a {
   color: #EEE5D0; }
 
+/* ===============================================HOME PAGE================================================ */
 /*HOME - NAVBAR AND JUMBOTRON*/
 .navbar {
   background-color: #FFF;
@@ -296,7 +297,38 @@ footer {
 .modal-body .signup-btn:hover {
   background-color: #E44125; }
 
-/* =============================================================================================== */
+/* ===============================================USER PAGE================================================ */
+.navbar-user {
+  background-color: #E44125; }
+
+.navbar-brand-user {
+  color: #EEE5D0; }
+
+.navbar-right-user {
+  color: #EEE5D0; }
+
+.searchaddbar {
+  margin-top: 4rem; }
+
+.input-md {
+  font-family: Peleguer, serif;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0;
+  background-color: #EEE5D0; }
+
+.btn-md {
+  border-radius: 0;
+  background-color: #6B7649;
+  border-color: #6B7649;
+  padding-left: 4rem;
+  padding-right: 4rem; }
+
+.btn-md:hover {
+  background-color: #F07222;
+  border-color: #F07222; }
+
+/* ======================================================================================================== */
 @media only screen and (max-width: 1366px) {
   /*HOME PAGE*/
   .navtext {
