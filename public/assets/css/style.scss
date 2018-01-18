@@ -36,6 +36,14 @@ body {
     padding-bottom: 0.5rem;
 }
 
+p {
+    font-family: $body-font;
+}
+
+h1, h2, h3 {
+    font-family: $header-font;
+}
+
 a {
     color: $cream;
 }

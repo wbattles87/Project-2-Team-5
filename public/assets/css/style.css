@@ -42,6 +42,12 @@ body {
   overflow-y: auto;
   padding-bottom: 0.5rem; }
 
+p {
+  font-family: Peleguer, serif; }
+
+h1, h2, h3 {
+  font-family: LeagueGothic, sans-serif; }
+
 a {
   color: #EEE5D0; }
 
