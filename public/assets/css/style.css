@@ -298,6 +298,12 @@ footer {
   background-color: #E44125; }
 
 /* ===============================================USER PAGE================================================ */
+th {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2.1rem;
+  letter-spacing: 0.3rem;
+  color: #0E0A08; }
+
 .navbar-user {
   background-color: #E44125; }
 
@@ -327,6 +333,21 @@ footer {
 .btn-md:hover {
   background-color: #F07222;
   border-color: #F07222; }
+
+.table-icon {
+  height: 4rem;
+  padding-right: 5rem; }
+
+.table-header {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 4.5rem;
+  letter-spacing: 1.5rem;
+  display: block;
+  text-align: center;
+  background-color: #F07222;
+  color: #EEE5D0;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  margin-top: 8rem; }
 
 /* ======================================================================================================== */
 @media only screen and (max-width: 1366px) {
