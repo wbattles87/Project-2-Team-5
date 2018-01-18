@@ -112,14 +112,12 @@
             font-size: 2.5rem;
         }
     }
-
     .modal-dialog {
         width: 90%;
         height: 80%;
         opacity: 0.9;
     }
 }
-
 
 @media only screen and (max-width: 767px) {
     /*HOME PAGE*/
@@ -176,7 +174,6 @@
         height: 60rem;
         margin-bottom: 0rem;
     }
-
     .howitworks-block {
         .timer-img {
             width: 10rem;
@@ -191,17 +188,14 @@
             margin-top: 1rem;
         }
     }
-
     footer {
         display: none;
     }
-
     .modal-dialog {
         width: 100%;
         height: 80%;
         opacity: 0.9;
     }
-
     .modal-body {
         #signup-MH {
             font-size: 2.5rem;
@@ -213,19 +207,27 @@
             font-size: 1.5rem;
         }
     }
+/* ===============================================USER PAGE================================================ */
+    .table-header {
+        padding-top: 1rem;
+        font-size: 2.5rem;
+        letter-spacing: 0.5rem;
+    }
+    .table-icon {
+        height: 2.5rem;
+        padding-right: 3rem;
+    }
 }
 
 @media only screen and (max-width: 480px) {
     .navbar-brand {
         font-size: 4rem;
     }
-
     .modal-dialog {
         width: 100%;
         height: 80%;
         opacity: 0.9;
     }
-
     .modal-body {
         #signup-MH {
             font-size: 2.5rem;

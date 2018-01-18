@@ -346,7 +346,7 @@ th {
   text-align: center;
   background-color: #F07222;
   color: #EEE5D0;
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  padding: 1rem 2rem 0.5rem 2rem;
   margin-top: 8rem; }
 
 /* ======================================================================================================== */
@@ -521,7 +521,17 @@ th {
   .modal-body .signup-textM {
     font-size: 1.75rem; }
   .modal-body .form-control {
-    font-size: 1.5rem; } }
+    font-size: 1.5rem; }
+
+  /* ===============================================USER PAGE================================================ */
+  .table-header {
+    padding-top: 1rem;
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem; }
+
+  .table-icon {
+    height: 2.5rem;
+    padding-right: 3rem; } }
 @media only screen and (max-width: 480px) {
   .navbar-brand {
     font-size: 4rem; }
