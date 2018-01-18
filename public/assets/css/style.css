@@ -355,6 +355,35 @@ th {
   padding: 1rem 2rem 0.5rem 2rem;
   margin-top: 8rem; }
 
+/* ===============================================INGREDIENT PAGE ================================================ */
+.ingredient-title {
+  font-size: 5rem;
+  letter-spacing: 1rem;
+  color: #E44125;
+  margin-top: 6rem; }
+
+.ingredient-header {
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: #F07222;
+  margin-top: 5rem; }
+
+.ingredient-text {
+  font-size: 2.25rem; }
+
+.ingredient-btn {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2rem;
+  color: #EEE5D0;
+  background-color: #E44125;
+  border-radius: 0;
+  padding: 0.5rem 4rem 0.5rem 4rem;
+  margin-top: 6rem;
+  margin-right: 7rem; }
+
+.ingredient-btn:hover {
+  background-color: #6B7649; }
+
 /* ======================================================================================================== */
 @media only screen and (max-width: 1366px) {
   /*HOME PAGE*/
@@ -537,7 +566,12 @@ th {
 
   .table-icon {
     height: 2.5rem;
-    padding-right: 3rem; } }
+    padding-right: 3rem; }
+
+  /* ===============================================INGREDIENT PAGE================================================ */
+  .ingredient-btn {
+    padding: 1rem;
+    margin-right: 0.5rem; } }
 @media only screen and (max-width: 480px) {
   .navbar-brand {
     font-size: 4rem; }
