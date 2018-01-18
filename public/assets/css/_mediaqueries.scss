@@ -1,8 +1,108 @@
-@media only screen and (max-width : 1200px) {
+@media only screen and (max-width : 1366px) {
+    /*HOME PAGE*/
+    .navtext {
+        margin-left: 1rem;
+    }
 
+    .loginscreen-right {
+        width: 50rem;
+        height: 83.83rem;
+    }
+    
+    .loginscreen-left {
+        #recipes-text {
+            font-size: 9.5rem;
+            letter-spacing: 2rem;
+            padding-top: 10rem;
+        }
+        #recipes-subtext {
+            font-size: 4.5rem;
+        }
+        .des-header {
+            font-size: 4rem;
+        }
+    }
+
+    .tile-img {
+        width: none;
+        height: 120rem;
+    }
+
+    .lists-img {
+        width: 18rem;
+        margin-left: 40%;
+        margin-top: 30rem;
+    }
+
+    .about-text {
+        font-size: 2.5rem;
+    }
+
+    .howitworks-block {
+        padding: 4rem;
+        height: 70rem;
+        margin-top: 15rem;
+    }
+    
+    .howitworks-block {
+        .timer-img {
+            width: 15rem;
+            margin-top: 5rem;
+        }
+
+        .howitworks-text {
+            font-size: 2.5rem;
+        }
+    }
+    
 }
 
 @media only screen and (max-width : 979px) {
+    /*HOME PAGE*/
+    .navbar-right {
+        display: none;
+    }
+
+    .mainimg {
+        top: -20rem !important;
+        width: 100%;
+        height: 90rem;
+    }
+
+    .loginscreen-right {
+        position: absolute;
+        padding: 2em 2em 2em 2.5em;
+        width: 100%;
+        height: 59rem;
+    }
+
+    .loginscreen-right {
+        .infotext {
+            font-size: 1.5rem;
+        }
+
+        #signuptext {
+            font-size: 1.75rem;
+        }
+    }
+
+    .loginscreen-left {
+        padding-left: 2rem;
+    }
+    
+    .loginscreen-left {
+        #recipes-text {
+            padding-top: 3rem;
+        }
+        #recipes-subtext {
+            font-size: 2.75rem;
+            margin-top: -2rem;
+        }
+        .des-header {
+            font-size: 4rem;
+            letter-spacing: 0.2rem;
+            margin-top: 6rem;
+        }
 
 }
 
