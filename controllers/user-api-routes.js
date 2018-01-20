@@ -2,11 +2,11 @@ const db = require("../models");
 
 module.exports = function(app) {
 
-    app.get("/user/api", function(res, req){
+    app.get("/api/user", function(res, req){
         //get user
     });
 
-    app.post("/user/api", function(res, req){
+    app.post("/api/user", function(res, req){
         //add user
     });
 
