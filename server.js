@@ -37,7 +37,6 @@ require("./controllers/recipe-api-routes.js")(app);
 require("./controllers/recipe-display-routes.js")(app);
 require("./controllers/user-api-routes.js")(app);
 
-
 //syncs sequelize models and waits till update complete before starting server
 db.sequelize.sync().then(function(){
   app.listen(PORT, function(){
