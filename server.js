@@ -31,6 +31,7 @@ app.set("view engine", "handlebars");
 //require("./routes/post-api-routes.js")(app);
 require("./controllers/burgers_controller.js")(app);
 
+
 //syncs sequelize models and waits till update complete before starting server
 db.sequelize.sync().then(function(){
   app.listen(PORT, function(){
