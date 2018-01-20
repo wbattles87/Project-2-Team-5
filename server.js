@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
+//requring models for syncing
 const db = require("./models");
 //require('dotenv').config({path: __dirname + './config/.env'});
 //we may need to figure out env variables for our local dbs
 
+//sets up express app
 var PORT = process.env.PORT || 8000;
 var app = express();
 
@@ -28,8 +30,10 @@ app.set("view engine", "handlebars");
 //require("./routes/post-api-routes.js")(app);
 require("./controllers/burgers_controller.js")(app);
 
+//syncs sequelize models and waits till update complete before starting server
 db.sequelize.sync().then(function(){
   app.listen(PORT, function(){
     console.log("Listening on port: " + PORT);
   });
 });
+
