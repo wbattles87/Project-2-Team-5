@@ -29,7 +29,13 @@ app.set("view engine", "handlebars");
 //require("./routes/html-routes.js")(app);
 //require("./routes/author-api-routes.js")(app);
 //require("./routes/post-api-routes.js")(app);
-require("./controllers/burgers_controller.js")(app);
+//require("./controllers/burgers_controller.js")(app);
+require("./controllers/html-routes.js")(app);
+require("./controllers/ingredient-api-routes.js")(app);
+require("./controllers/instruction-api-routes.js")(app);
+require("./controllers/recipe-api-routes.js")(app);
+require("./controllers/recipe-display-routes.js")(app);
+require("./controllers/user-api-routes.js")(app);
 
 
 //syncs sequelize models and waits till update complete before starting server
