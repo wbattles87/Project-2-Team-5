@@ -1,24 +1,27 @@
 {
-  "name": "burgers_with_sequelize",
+  "name": "burger",
   "version": "1.0.0",
-  "description": "-Node \r -Express \r -Sequelize \r -MySQL \r -Handlebars \r -Jquery",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markkazanski/burger.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.14.2",
-    "dotenv": "^4.0.0",
-    "express": "^4.13.3",
-    "express-handlebars": "^2.0.1",
-    "method-override": "^2.3.5",
-    "mysql2": "^1.5.1",
-    "sequelize": "^4.31.1"
+  "bugs": {
+    "url": "https://github.com/markkazanski/burger/issues"
   },
-  "devDependencies": {
-    "handlebars-helper-css": "^0.1.0"
+  "homepage": "https://github.com/markkazanski/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.31.2"
   }
 }
