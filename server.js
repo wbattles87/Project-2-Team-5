@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const methodOverride = require("method-override");
 //requring models for syncing
 const db = require("./models");
 //require('dotenv').config({path: __dirname + './config/.env'});
@@ -12,6 +11,8 @@ var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
+
+//require DB's once setup
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
