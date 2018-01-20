@@ -1,8 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
-  var Instruction= sequelize.define("Instruction", {
-    Instruction {
+  var Instruction = sequelize.define("Instruction", {
+    
+      instruction_info:{
     
       type: DataTypes.TEXT,
+    },
+
+    instruction_checkbox:{
+      type: DataTypes.BOOLEAN
+    }
      
   });
 
@@ -15,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-  return Post;
+  return Instruction;
 };
 
 
