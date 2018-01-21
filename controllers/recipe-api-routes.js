@@ -49,30 +49,41 @@ module.exports = function(app) {
 
                 console.log(parseItempropInstructions($));
 
-                db.Recipe.create( { 
-                    recipe_url:newUrl,
-                    recipe_name: "Recipe Name " + Math.random(2),
-                    UserId: 1 //Test User
-                 } )
-                .then(function(response){
-                    var recipeId = response.dataValues.id;
-                    db.Ingredient.bulkCreate( parseItempropIngredients($, recipeId), { individualHooks: true } )
+                db.User.findOrCreate({
+                    where: {id: '1'}, 
+                    defaults: {
+                        user_email: 'AUTOCREATED@EMAIL',
+                        user_password: "AUTO CREATED PASS"
+                    }
+                }).then(function(response){
+                    console.log(response);
+                
+                    db.Recipe.create( { 
+                        recipe_url:newUrl,
+                        recipe_name: "Recipe Name " + Math.random(2),
+                        UserId: 1 //Test User
+                    } )
                     .then(function(response){
-                        db.Instruction.bulkCreate( parseItempropInstructions($, recipeId), { individualHooks: true } )
+                        var recipeId = response.dataValues.id;
+                        db.Ingredient.bulkCreate( parseItempropIngredients($, recipeId), { individualHooks: true } )
                         .then(function(response){
-                            res.json(response);
+                            db.Instruction.bulkCreate( parseItempropInstructions($, recipeId), { individualHooks: true } )
+                            .then(function(response){
+                                res.json(response);
+                            })
+                            .catch(function(error){
+                                res.json(error);
+                            });
                         })
                         .catch(function(error){
                             res.json(error);
                         });
-                    })
-                    .catch(function(error){
+
+
+                    }).catch(function(error){
                         res.json(error);
                     });
 
-
-                }).catch(function(error){
-                    res.json(error);
                 });
                 
                
