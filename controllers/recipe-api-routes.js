@@ -1,5 +1,6 @@
 const db = require("../models");
-var request = require('request');
+const request = require('request');
+const cheerio = require('cheerio');
 
 module.exports = function(app) {
 
@@ -16,15 +17,29 @@ module.exports = function(app) {
         var newHTML;
 
         request(newUrl, function(error, response, body) {
+            if(error) throw error;
 
             // If the request was successful...
-            if (!error && response.statusCode === 200) {
-          
-              // Then log the body from the site!
-              console.log(body);
-              newHTML = body;
+            if (response.statusCode === 200) {
+            
+                // Then log the body from the site!
+               // console.log(body);
+                newHTML = body;
+
+                const $ = cheerio.load(newHTML);
+
+                var array = [];
+
+                $('.recipe-ingred_txt').map(function(i, el) {
+                    // this === el 
+                    array[i] = $(this).text();
+                    //array[i] = $(this).attr("content");
+                });
+                console.log(array);
             }
-          });
+        });
+
+
     });
 
 };
