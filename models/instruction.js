@@ -7,7 +7,8 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     instruction_checkbox:{
-      type: DataTypes.BOOLEAN
+      type: DataTypes.BOOLEAN,
+      defaultValue: 1
     }
      
   });

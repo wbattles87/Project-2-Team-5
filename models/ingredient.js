@@ -6,7 +6,8 @@ module.exports = function(sequelize, DataTypes){
         },
 
         ingredient_checkbox:{
-            type: DataTypes.BOOLEAN
+            type: DataTypes.BOOLEAN,
+            defaultValue: 1
         }
 
       });
