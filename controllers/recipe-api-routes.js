@@ -10,6 +10,7 @@ module.exports = function(app) {
     app.post("/api/recipe", function(req, res){
         //add recipe
         //db.Recipe.create(...)
+        //req.body.recipe_url
     });
 
 };
