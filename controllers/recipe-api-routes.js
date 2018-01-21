@@ -30,9 +30,12 @@ module.exports = function(app) {
 
                 var array = [];
 
-                $('.recipe-ingred_txt').map(function(i, el) {
+                $('[itemprop]').map(function(i, el) {
                     // this === el 
-                    array[i] = $(this).text();
+                    //console.log($(this).attr("itemprop"));
+                    if($(this).attr("itemprop") === "ingredients")
+                        array.push( $(this).text() );
+                    //array[i] = $(this).text();
                     //array[i] = $(this).attr("content");
                 });
                 console.log(array);
