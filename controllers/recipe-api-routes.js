@@ -13,7 +13,7 @@ module.exports = function(app) {
         //add recipe
         //db.Recipe.create(...)
         var newUrl = req.body.recipe_url;
-        console.log(req.body);
+        //console.log(req.body);
         //var newUrl = "http://allrecipes.com/recipe/234610/cinnamon-oatmeal-bars/";
         
         /*db.User.create({
@@ -45,18 +45,18 @@ module.exports = function(app) {
             if (response.statusCode === 200) {
                 const $ = cheerio.load(body); //load HTML into cheerio
 
-                console.log(parseItempropIngredients($));
+                //console.log(parseItempropIngredients($));
 
-                console.log(parseItempropInstructions($));
+                //console.log(parseItempropInstructions($));
 
-                db.User.findOrCreate({
+                db.User.findOrCreate({ //REMOVE THIS WHEN USER LOGIN WORKS
                     where: {id: '1'}, 
                     defaults: {
                         user_email: 'AUTOCREATED@EMAIL',
                         user_password: "AUTO CREATED PASS"
                     }
                 }).then(function(response){
-                    console.log(response);
+                    //console.log(response);
                 
                     db.Recipe.create( { 
                         recipe_url:newUrl,
@@ -112,6 +112,7 @@ function parseItempropInstructions($, recipeId){
     $('[itemprop]').map(function(i, el) { //get list of elements with itemprop attr
         // this === el
         if($(this).attr("itemprop").match(/nstructions/)){ //all itemprops that match I/instructions
+          console.log("instructionsArray: " + i + " : " + el + " : " + $(this).text().split('\n'));
           instructionsArray.push( $(this).text().split('\n') ); //split items by line breaks
         }
     });
@@ -119,7 +120,9 @@ function parseItempropInstructions($, recipeId){
     var counter=0;
     for(let i=0; i<instructionsArray.length; i++){ //Run through array of arrays and put all instructions in order
       for(let j=0; j<instructionsArray[i].length; j++){
-        if(instructionsArray[i][j].length){
+        console.log("original: " + instructionsArray[i][j].length);
+          console.log("space removed: " + instructionsArray[i][j].replace(/\s\s+/g, ' ').length);
+        if( instructionsArray[i][j].replace(/\s\s+/g, ' ').length > 20){
           counter++;
           instructionArrayClean.push( { 
               instruction_info: counter + ". " + instructionsArray[i][j] ,
@@ -129,4 +132,18 @@ function parseItempropInstructions($, recipeId){
       }
     }
     return instructionArrayClean;
+}
+
+function cleanArray(array){
+    for(let i=0; i<array.length; i++){
+        if( !array[i] ||  array[i].length < 5)
+            remove(array, i);
+    }
+}
+
+function remove(array, index) {
+    
+    if (index !== -1) {
+        array.splice(index, 1);
+    }
 }
