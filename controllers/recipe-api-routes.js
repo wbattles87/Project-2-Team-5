@@ -69,7 +69,7 @@ module.exports = function(app) {
                         .then(function(response){
                             db.Instruction.bulkCreate( parseItempropInstructions($, recipeId), { individualHooks: true } )
                             .then(function(response){
-                                res.json(response);
+                                res.json(response); //returns Instructions object
                             })
                             .catch(function(error){
                                 res.json(error);
