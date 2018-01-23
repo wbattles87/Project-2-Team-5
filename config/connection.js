@@ -19,3 +19,4 @@ var sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.
 
 // Exports the connection for other files to use
 module.exports = sequelize;
+

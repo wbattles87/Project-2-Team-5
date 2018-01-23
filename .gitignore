@@ -1,3 +1,5 @@
+.DS_Store
 node_modules
 .env
-config.json
+config/config.json
+ignore_this
