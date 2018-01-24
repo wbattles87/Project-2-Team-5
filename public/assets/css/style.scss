@@ -382,6 +382,15 @@ th {
     margin-top: 4rem;
 }
 
+.recipeName {
+    color: $black;
+    text-decoration: none;
+}
+
+.recipeName:hover {
+    color: $cream;
+}
+
 .input-md {
     font-family: $body-font;
     font-size: 2rem;
@@ -452,5 +461,6 @@ th {
 .ingredient-btn:hover {
     background-color: $green;
 }
+
 /* ======================================================================================================== */
 @import 'mediaqueries';

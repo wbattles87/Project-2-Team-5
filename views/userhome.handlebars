@@ -47,11 +47,11 @@
                 {{recipes.recipe_name}}
                 {{#each recipes}}
                 <tr>
-                    <td><a>{{this.recipe_name}}</a></td>
+                    <td><a class="recipeName">{{this.recipe_name}}</a></td>
                     <td>{{this.recipe_url}}</td>
                     <td>
-                        <a id="recipeDelete">delete</a>
-                        <a id="recipeEdit">edit</a>
+                        <a id="recipeDelete" class="recipeName">delete</a>
+                        <a id="recipeEdit" class="recipeName">edit</a>
                     </td>
                 </tr>
                 {{/each}}
@@ -73,11 +73,11 @@
                 {{recipes.recipe_name}}
                 {{#each recipes}}
                 <tr>
-                    <td class="recipeName"><a>{{this.recipe_name}}</a></td>
+                    <td><a class="recipeName">{{this.recipe_name}}</a></td>
                     <td>{{this.recipe_url}}</td>
                     <td>
-                        <a id="recipeDelete">delete</a>
-                        <a id="recipeEdit">edit</a>
+                        <a id="recipeDelete" class="recipeName">delete</a>
+                        <a id="recipeEdit" class="recipeName">edit</a>
                     </td>
                 </tr>
                 {{/each}}
