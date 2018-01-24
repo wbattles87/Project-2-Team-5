@@ -74,16 +74,4 @@ $(document).ready(function () {
             location.reload();
         })
     });
-
-    /*TEMPORARY Burgers thing - TEMPLATE*/
-    $(".eatit").on("click", function(){
-        $.ajax({
-            url:`/burgers/eat/${$(this).attr("data-id")}`,
-            method: "PUT"
-        }).then(function(data){
-            console.log("Then data: " + data);
-            location.reload();
-        });
-        
-    });
 });
