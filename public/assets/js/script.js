@@ -9,16 +9,11 @@ $(document).ready(function () {
     $("#navbarlogo").on("click", function() {
         event.preventDefault();
 
-        $ajax({
-            url:`RECIPE NAMES`,
+        $.ajax({
+            url:`/`,
             method: "GET"
         }).then(function(data){
-            console.log("Then data: " + data);
-
-            for (i=0; i<searchQuery.length; i+=1) {
-                //break recipe name into array - two for loops?
-                //need to compare searchQuery array against each recipe name array
-            };
+            console.log("Returning to Home");
         })
     });
 
