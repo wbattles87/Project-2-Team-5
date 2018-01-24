@@ -13,7 +13,7 @@ $(document).ready(function () {
         }).then(function(data){
             console.log(data);
             console.log("Returning to Home");
-            $(".body-template").html(data);
+            $(".body-template").html(data); //need better way - load original page
         })
     });
 
