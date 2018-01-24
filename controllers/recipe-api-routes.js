@@ -60,7 +60,7 @@ module.exports = function(app) {
                 
                     db.Recipe.create( { 
                         recipe_url:newUrl,
-                        recipe_name: "Recipe Name " + Math.random(2),
+                        recipe_name: $("title").text().trim().substr(0, 60),
                         UserId: 1 //Test User
                     } )
                     .then(function(response){
