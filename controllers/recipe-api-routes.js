@@ -6,15 +6,19 @@ module.exports = function (app) {
 
     //****************************TESTING PURPOSES FOR HANDLEBARS
     app.get("/recipe", function (req, res) {
-            var hbsObject = {
-                recipe_name: "lasagna",
-                recipe_url: "allrecipes.com",
-            };
-            console.log({hbsObject});
-            res.render("userhome", {recipes: [hbsObject]});
+        var hbsObject = {
+            recipe_name: "lasagna",
+            recipe_url: "allrecipes.com",
+        };
+        console.log({
+            hbsObject
+        });
+        res.render("userhome", {
+            recipes: [hbsObject]
+        });
     });
 
-    app.get("/ingredient", function (req,res) {
+    app.get("/ingredient", function (req, res) {
         var ingredientsObject = [{
             ingredient_info: "lasagna",
         }, {
@@ -22,19 +26,23 @@ module.exports = function (app) {
         }];
 
         var directionsObject = [{
-            instruction_info: "heat pot",
-        },
-        {
-            instruction_info: "cut meat", 
-        }];
+                instruction_info: "heat pot",
+            },
+            {
+                instruction_info: "cut meat",
+            }
+        ];
 
-        res.render("ingredientpage", {ingredients: ingredientsObject, instructions: directionsObject});
+        res.render("ingredientpage", {
+            ingredients: ingredientsObject,
+            instructions: directionsObject
+        });
     })
 
     //****************************TESTING END
 
     app.get("/api/recipe", function (req, res) {
-        
+
     });
 
     app.post("/api/recipe", function (req, res) {
@@ -87,23 +95,28 @@ module.exports = function (app) {
                     }
                 }).then(function (response) {
                     //console.log(response);
-                
-                    db.Recipe.create( { 
-                        recipe_url:newUrl,
-                        recipe_name: $("title").text().trim().substr(0, 60),
-                        UserId: 1 //Test User
-                    } )
-                    .then(function(response){
-                        var recipeId = response.dataValues.id;
-                        db.Ingredient.bulkCreate( parseItempropIngredients($, recipeId), { individualHooks: true } )
-                        .then(function(response){
-                            db.Instruction.bulkCreate( parseItempropInstructions($, recipeId), { individualHooks: true } )
-                            .then(function(response){
-                                res.json(response); //returns Instructions object
-                            })
-                            .catch(function(error){
-                                res.json(error);
+
+                    db.Recipe.create({
+                            recipe_url: newUrl,
+                            recipe_name: $("title").text().trim().substr(0, 60),
+                            UserId: 1 //Test User
+                        })
+                        .then(function (response) {
+                            var recipeId = response.dataValues.id;
+                            db.Ingredient.bulkCreate(parseItempropIngredients($, recipeId), {
+                                individualHooks: true
                             });
+                        })
+                        .then(function (response) {
+                            db.Instruction.bulkCreate(parseItempropInstructions($, recipeId), {
+                                    individualHooks: true
+                                })
+                                .then(function (response) {
+                                    res.json(response); //returns Instructions object
+                                })
+                                .catch(function (error) {
+                                    res.json(error);
+                                });
                         })
                         .then(function (response) {
                             var recipeId = response.dataValues.id;
@@ -131,14 +144,9 @@ module.exports = function (app) {
                         });
 
                 });
-
-
-            } //end succesfull response
+            }; //end succesfull response
         });
-
-
     });
-
 };
 
 function parseItempropIngredients($, recipeId) {
