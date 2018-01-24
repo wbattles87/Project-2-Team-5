@@ -17,7 +17,7 @@
     <h3 class="ingredient-header">INGREDIENTS</h3>
     <div class="ingredients-list ingredient-text">
         {{#each ingredients}}
-            <div class="row">
+            <div class="row ingredientChecklist">
                 <div class="col-sm-1">
                     <i class="glyphicon glyphicon-ok"></i>
                 </div>
@@ -37,7 +37,7 @@
             </div>
         {{/each}}
     </p>
-    <button class="btn ingredient-btn" type="button">EDIT</button>
-    <button class="btn ingredient-btn" type="button">DELETE</button>
+    <button class="btn ingredient-btn recipeEdit" type="button">EDIT</button>
+    <button class="btn ingredient-btn recipeDelete" type="button">DELETE</button>
     <button class="btn ingredient-btn" type="button">COMPLETE</button>
 </div>

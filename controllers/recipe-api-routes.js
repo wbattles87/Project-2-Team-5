@@ -4,6 +4,43 @@ const cheerio = require('cheerio');
 
 module.exports = function(app) {
 
+    //****************************TESTING PURPOSES FOR HANDLEBARS (ALIZE CODES)
+    app.get("/recipe", function (req, res) {
+        var hbsObject = {
+            recipe_name: "lasagna",
+            recipe_url: "allrecipes.com",
+        };
+        console.log({
+            hbsObject
+        });
+        res.render("userhome", {
+            recipes: [hbsObject]
+        });
+    });
+
+    app.get("/ingredient", function (req, res) {
+        var ingredientsObject = [{
+            ingredient_info: "lasagna",
+        }, {
+            ingredient_info: "pepper",
+        }];
+
+        var directionsObject = [{
+                instruction_info: "heat pot",
+            },
+            {
+                instruction_info: "cut meat",
+            }
+        ];
+
+        res.render("ingredientpage", {
+            ingredients: ingredientsObject,
+            instructions: directionsObject
+        });
+    })
+
+    //****************************TESTING END (ALIZE CODES)
+
     app.get("/api/recipe", function(req, res){
         //get recipe
         //return res.JSON(recipe results)
@@ -22,7 +59,6 @@ module.exports = function(app) {
         }).then(function(response){
             console.log(response);
             console.log("User datavalues id: " + response.dataValues.id);
-
             db.Recipe.create({
                 recipe_url: "TEST URL",
                 recipe_name: "TEST NAME",

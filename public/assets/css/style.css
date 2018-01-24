@@ -323,7 +323,11 @@ th {
   margin-top: 4rem; }
 
 .recipeName {
-  color: #0E0A08; }
+  color: #0E0A08;
+  text-decoration: none; }
+
+.recipeName:hover {
+  color: #EEE5D0; }
 
 .input-md {
   font-family: Peleguer, serif;
@@ -386,6 +390,10 @@ th {
 
 .ingredient-btn:hover {
   background-color: #6B7649; }
+
+.checked {
+  color: #AAD037;
+  text-decoration: line-through; }
 
 /* ======================================================================================================== */
 @media only screen and (max-width: 1366px) {
