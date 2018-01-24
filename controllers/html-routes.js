@@ -7,5 +7,4 @@ module.exports = function(app) {
         res.render("index", { recipe_data: { id:"1", recipe_name: "TEST RECIPE" } });
         //something like this. Need to convert home-test to use handlebars
     });
-
 };
