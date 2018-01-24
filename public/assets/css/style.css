@@ -322,6 +322,9 @@ th {
 .searchaddbar {
   margin-top: 4rem; }
 
+.recipeName {
+  color: #0E0A08; }
+
 .input-md {
   font-family: Peleguer, serif;
   font-size: 2rem;

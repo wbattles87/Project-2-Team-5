@@ -2,20 +2,48 @@ const db = require("../models");
 const request = require('request');
 const cheerio = require('cheerio');
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-    app.get("/api/recipe", function(req, res){
-        //get recipe
-        //return res.JSON(recipe results)
+    //****************************TESTING PURPOSES FOR HANDLEBARS
+    app.get("/recipe", function (req, res) {
+            var hbsObject = {
+                recipe_name: "lasagna",
+                recipe_url: "allrecipes.com",
+            };
+            console.log({hbsObject});
+            res.render("userhome", {recipes: [hbsObject]});
     });
 
-    app.post("/api/recipe", function(req, res){
+    app.get("/ingredient", function (req,res) {
+        var ingredientsObject = [{
+            ingredient_info: "lasagna",
+        }, {
+            ingredient_info: "pepper",
+        }];
+
+        var directionsObject = [{
+            instruction_info: "heat pot",
+        },
+        {
+            instruction_info: "cut meat", 
+        }];
+
+        res.render("ingredientpage", {ingredients: ingredientsObject, instructions: directionsObject});
+    })
+
+    //****************************TESTING END
+
+    app.get("/api/recipe", function (req, res) {
+        
+    });
+
+    app.post("/api/recipe", function (req, res) {
         //add recipe
         //db.Recipe.create(...)
         var newUrl = req.body.recipe_url;
         //console.log(req.body);
         //var newUrl = "http://allrecipes.com/recipe/234610/cinnamon-oatmeal-bars/";
-        
+
         /*db.User.create({
             user_email: "TEST EMAIL",
             user_password: "TEST PASS"
@@ -38,8 +66,8 @@ module.exports = function(app) {
             }); 
         }); */
 
-        request(newUrl, function(error, response, body) {
-            if(error) throw error;
+        request(newUrl, function (error, response, body) {
+            if (error) throw error;
 
             // If the request was successful...
             if (response.statusCode === 200) {
@@ -50,12 +78,14 @@ module.exports = function(app) {
                 //console.log(parseItempropInstructions($));
 
                 db.User.findOrCreate({ //REMOVE THIS WHEN USER LOGIN WORKS
-                    where: {id: '1'}, 
+                    where: {
+                        id: '1'
+                    },
                     defaults: {
                         user_email: 'AUTOCREATED@EMAIL',
                         user_password: "AUTO CREATED PASS"
                     }
-                }).then(function(response){
+                }).then(function (response) {
                     //console.log(response);
                 
                     db.Recipe.create( { 
@@ -75,18 +105,34 @@ module.exports = function(app) {
                                 res.json(error);
                             });
                         })
-                        .catch(function(error){
+                        .then(function (response) {
+                            var recipeId = response.dataValues.id;
+                            db.Ingredient.bulkCreate(parseItempropIngredients($, recipeId), {
+                                    individualHooks: true
+                                })
+                                .then(function (response) {
+                                    db.Instruction.bulkCreate(parseItempropInstructions($, recipeId), {
+                                            individualHooks: true
+                                        })
+                                        .then(function (response) {
+                                            res.json(response); //returns Instructions object
+                                        })
+                                        .catch(function (error) {
+                                            res.json(error);
+                                        });
+                                })
+                                .catch(function (error) {
+                                    res.json(error);
+                                });
+
+
+                        }).catch(function (error) {
                             res.json(error);
                         });
 
-
-                    }).catch(function(error){
-                        res.json(error);
-                    });
-
                 });
-                
-               
+
+
             } //end succesfull response
         });
 
@@ -95,54 +141,57 @@ module.exports = function(app) {
 
 };
 
-function parseItempropIngredients($, recipeId){
+function parseItempropIngredients($, recipeId) {
     var ingredientsArray = [];
-    $('[itemprop]').map(function(i, el) { //get list of elements with itemprop attr
+    $('[itemprop]').map(function (i, el) { //get list of elements with itemprop attr
         // this === el 
-        if($(this).attr("itemprop").match(/ngredient/)) //all itemprops that match I/ingredient
-            ingredientsArray.push( { ingredient_info: $(this).text(), RecipeId: recipeId } ); //pushes an object
+        if ($(this).attr("itemprop").match(/ngredient/)) //all itemprops that match I/ingredient
+            ingredientsArray.push({
+                ingredient_info: $(this).text(),
+                RecipeId: recipeId
+            }); //pushes an object
     });
     return ingredientsArray;
 }
 
-function parseItempropInstructions($, recipeId){
+function parseItempropInstructions($, recipeId) {
     var instructionsArray = [];
     var instructionArrayClean = [];
 
-    $('[itemprop]').map(function(i, el) { //get list of elements with itemprop attr
+    $('[itemprop]').map(function (i, el) { //get list of elements with itemprop attr
         // this === el
-        if($(this).attr("itemprop").match(/nstructions/)){ //all itemprops that match I/instructions
-          console.log("instructionsArray: " + i + " : " + el + " : " + $(this).text().split('\n'));
-          instructionsArray.push( $(this).text().split('\n') ); //split items by line breaks
+        if ($(this).attr("itemprop").match(/nstructions/)) { //all itemprops that match I/instructions
+            console.log("instructionsArray: " + i + " : " + el + " : " + $(this).text().split('\n'));
+            instructionsArray.push($(this).text().split('\n')); //split items by line breaks
         }
     });
 
-    var counter=0;
-    for(let i=0; i<instructionsArray.length; i++){ //Run through array of arrays and put all instructions in order
-      for(let j=0; j<instructionsArray[i].length; j++){
-        console.log("original: " + instructionsArray[i][j].length);
-          console.log("space removed: " + instructionsArray[i][j].replace(/\s\s+/g, ' ').length);
-        if( instructionsArray[i][j].replace(/\s\s+/g, ' ').length > 20){
-          counter++;
-          instructionArrayClean.push( { 
-              instruction_info: counter + ". " + instructionsArray[i][j] ,
-              RecipeId: recipeId
-            } );
+    var counter = 0;
+    for (let i = 0; i < instructionsArray.length; i++) { //Run through array of arrays and put all instructions in order
+        for (let j = 0; j < instructionsArray[i].length; j++) {
+            console.log("original: " + instructionsArray[i][j].length);
+            console.log("space removed: " + instructionsArray[i][j].replace(/\s\s+/g, ' ').length);
+            if (instructionsArray[i][j].replace(/\s\s+/g, ' ').length > 20) {
+                counter++;
+                instructionArrayClean.push({
+                    instruction_info: counter + ". " + instructionsArray[i][j],
+                    RecipeId: recipeId
+                });
+            }
         }
-      }
     }
     return instructionArrayClean;
 }
 
-function cleanArray(array){
-    for(let i=0; i<array.length; i++){
-        if( !array[i] ||  array[i].length < 5)
+function cleanArray(array) {
+    for (let i = 0; i < array.length; i++) {
+        if (!array[i] || array[i].length < 5)
             remove(array, i);
     }
 }
 
 function remove(array, index) {
-    
+
     if (index !== -1) {
         array.splice(index, 1);
     }
