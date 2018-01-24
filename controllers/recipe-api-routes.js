@@ -4,15 +4,37 @@ const cheerio = require('cheerio');
 
 module.exports = function (app) {
 
+    //****************************TESTING PURPOSES FOR HANDLEBARS
     app.get("/recipe", function (req, res) {
-        //****************************TESTING PURPOSES FOR HANDLEBARS
             var hbsObject = {
                 recipe_name: "lasagna",
                 recipe_url: "allrecipes.com",
             };
             console.log({hbsObject});
             res.render("userhome", {recipes: [hbsObject]});
-        //****************************TESTING END
+    });
+
+    app.get("/ingredient", function (req,res) {
+        var ingredientsObject = [{
+            ingredient_info: "lasagna",
+        }, {
+            ingredient_info: "pepper",
+        }];
+
+        var directionsObject = [{
+            instruction_info: "heat pot",
+        },
+        {
+            instruction_info: "cut meat", 
+        }];
+
+        res.render("ingredientpage", {ingredients: ingredientsObject, instructions: directionsObject});
+    })
+
+    //****************************TESTING END
+
+    app.get("/api/recipe", function (req, res) {
+        
     });
 
     app.post("/api/recipe", function (req, res) {
