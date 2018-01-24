@@ -22,11 +22,11 @@
             </span>
         </div>
     </form>
-    <form>
+    <form action="/api/recipe" method="POST">
         <div class="input-group searchaddbar">
-            <input type="text" class="form-control input-md" placeholder="Recipe URL" />
+            <input type="text" id="recipe_url" name="recipe_url" class="form-control input-md" placeholder="Recipe URL" />
             <span class="input-group-btn">
-                <button class="btn btn-info btn-md" type="submit">
+                <button class="btn btn-info btn-md" id="submit-button" value="Submit" type="submit">
                     <i class="glyphicon glyphicon-plus"></i>
                 </button>
             </span>
