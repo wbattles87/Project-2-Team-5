@@ -87,11 +87,23 @@ module.exports = function (app) {
                     }
                 }).then(function (response) {
                     //console.log(response);
-
-                    db.Recipe.create({
-                            recipe_url: newUrl,
-                            recipe_name: "Recipe Name " + Math.random(2),
-                            UserId: 1 //Test User
+                
+                    db.Recipe.create( { 
+                        recipe_url:newUrl,
+                        recipe_name: $("title").text().trim().substr(0, 60),
+                        UserId: 1 //Test User
+                    } )
+                    .then(function(response){
+                        var recipeId = response.dataValues.id;
+                        db.Ingredient.bulkCreate( parseItempropIngredients($, recipeId), { individualHooks: true } )
+                        .then(function(response){
+                            db.Instruction.bulkCreate( parseItempropInstructions($, recipeId), { individualHooks: true } )
+                            .then(function(response){
+                                res.json(response); //returns Instructions object
+                            })
+                            .catch(function(error){
+                                res.json(error);
+                            });
                         })
                         .then(function (response) {
                             var recipeId = response.dataValues.id;
