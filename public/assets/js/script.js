@@ -5,6 +5,16 @@ $(document).ready(function () {
         $("#signup-modal").css({ opacity: 0.95 });
     });
 
+    //Recipe Search Function
+    $(".search-button").on("click", function() {
+        
+    });
+
+    //Ingredient To-Do List
+    $(".ingredientChecklist").on("click", function() {
+        
+    });
+
     //Recipe -> Ingredient Button (convert to ingredient page when clicked)
     $(".recipeName").on("click", function() {
         $ajax({
