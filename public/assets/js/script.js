@@ -24,7 +24,7 @@ $(document).ready(function () {
         var searchQuery = $("#userSearch").val().trim().split(' ');
         console.log(searchQuery);
 
-        $ajax({
+        $.ajax({
             url:`RECIPE NAMES`,
             method: "GET"
         }).then(function(data){
@@ -44,7 +44,7 @@ $(document).ready(function () {
 
     //Recipe -> Ingredient Button (convert to ingredient page when clicked)
     $(".recipeName").on("click", function() {
-        $ajax({
+        $.ajax({
             url:`/burgers/eat/${$(this).attr("data-id")}`,
             method: "GET"
         }).then(function(data){
@@ -55,7 +55,7 @@ $(document).ready(function () {
 
     //Delete Ajax (DELETE) Calls
     $(".recipeDelete").on("click", function() {
-        $ajax({
+        $.ajax({
             url:`/burgers/eat/${$(this).attr("data-id")}`,
             method: "DELETE"
         }).then(function(data){
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
     //Delete Ajax (PUT) Calls
     $(".recipeEdit").on("click", function() {
-        $ajax({
+        $.ajax({
             url:`/burgers/eat/${$(this).attr("data-id")}`,
             method: "PUT"
         }).then(function(data){
