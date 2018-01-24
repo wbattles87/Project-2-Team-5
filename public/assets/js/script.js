@@ -27,7 +27,7 @@ $(document).ready(function () {
 
     //Ingredient To-Do List
     $(".ingredientChecklist").on("click", function(ev) {
-        ev.target.classList.toggle("checked");
+        ev.target.parentElement.classList.toggle("checked");
     });
 
     //Recipe -> Ingredient Button (convert to ingredient page when clicked)

@@ -392,7 +392,9 @@ th {
   background-color: #6B7649; }
 
 .checked {
-  color: #F07222;
+  color: #F07222; }
+
+.strikeChecked {
   text-decoration: line-through; }
 
 /* ======================================================================================================== */
