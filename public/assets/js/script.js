@@ -7,13 +7,13 @@ $(document).ready(function () {
 
     //NavBar Logo to return to Homepage
     $("#navbarlogo").on("click", function() {
-        event.preventDefault();
-
         $.ajax({
             url:`/`,
-            method: "GET"
+            method: "GET",
         }).then(function(data){
+            console.log(data);
             console.log("Returning to Home");
+            $(".body-template").html(data);
         })
     });
 
