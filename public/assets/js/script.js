@@ -7,12 +7,27 @@ $(document).ready(function () {
 
     //Recipe Search Function
     $(".search-button").on("click", function() {
-        
+        event.preventDefault();
+
+        var searchQuery = $("#userSearch").val().trim().split(' ');
+        console.log(searchQuery);
+
+        $ajax({
+            url:`RECIPE NAMES`,
+            method: "GET"
+        }).then(function(data){
+            console.log("Then data: " + data);
+
+            for (i=0; i<searchQuery.length; i+=1) {
+                //break recipe name into array - two for loops?
+                //need to compare searchQuery array against each recipe name array
+            };
+        })
     });
 
     //Ingredient To-Do List
-    $(".ingredientChecklist").on("click", function() {
-        
+    $(".ingredientChecklist").on("click", function(ev) {
+        ev.target.classList.toggle("checked");
     });
 
     //Recipe -> Ingredient Button (convert to ingredient page when clicked)

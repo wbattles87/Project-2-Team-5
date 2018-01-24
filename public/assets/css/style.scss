@@ -462,5 +462,10 @@ th {
     background-color: $green;
 }
 
+.checked {
+  color: $orange;
+  text-decoration: line-through;
+}
+
 /* ======================================================================================================== */
 @import 'mediaqueries';
