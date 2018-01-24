@@ -1,7 +1,7 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "## Team Members: * Mark Kazanski - GitHub Master * Adeel Ahmed * Will Battles * Batli Joselevitz * Alize Nguyen - Project Manager",
+  "description": "## Team Members: * Mark Kazanski - GitHub Master * Adeel Ahmed * Will Battles * Alize Nguyen - Project Manager",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
