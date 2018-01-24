@@ -43,7 +43,6 @@ module.exports = function (app) {
         var newUrl = req.body.recipe_url;
         //console.log(req.body);
         //var newUrl = "http://allrecipes.com/recipe/234610/cinnamon-oatmeal-bars/";
-
         /*db.User.create({
             user_email: "TEST EMAIL",
             user_password: "TEST PASS"
@@ -191,7 +190,6 @@ function cleanArray(array) {
 }
 
 function remove(array, index) {
-
     if (index !== -1) {
         array.splice(index, 1);
     }
