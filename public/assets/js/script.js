@@ -5,6 +5,23 @@ $(document).ready(function () {
         $("#signup-modal").css({ opacity: 0.95 });
     });
 
+    //NavBar Logo to return to Homepage
+    $("#navbarlogo").on("click", function() {
+        event.preventDefault();
+
+        $ajax({
+            url:`RECIPE NAMES`,
+            method: "GET"
+        }).then(function(data){
+            console.log("Then data: " + data);
+
+            for (i=0; i<searchQuery.length; i+=1) {
+                //break recipe name into array - two for loops?
+                //need to compare searchQuery array against each recipe name array
+            };
+        })
+    });
+
     //Recipe Search Function
     $(".search-button").on("click", function() {
         event.preventDefault();
