@@ -90,16 +90,24 @@ $(document).ready(function () {
     //EDIT FORM SUMBITS
     $(".editSubmit").on("click", function (post) {
         var id = $(this).data("Id");
-        var ingredinetId = $(this).data("ingredientId");
-        var post;
-        
+        var ingredientId = $(this).data("ingredientId");
+
         var newTitle = $("#editTitle").val();
         var newIngredient = $("#editIngredient").val();
         var newInstruction = $("#editInstruction").val();
 
         $.ajax({
             method: "PUT",
-            url: "/api/recipes/edit/" + id,
+            url: "/api/recipes/edit/" + ingredientid,
+            data: post
+        })
+        .then(function () {
+            window.location.href = "/recipe/" + id;
+        });
+
+        $.ajax({
+            method: "PUT",
+            url: "/api/recipes/edit/" + ingredientid,
             data: post
         })
         .then(function () {

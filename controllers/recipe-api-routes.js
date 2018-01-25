@@ -35,19 +35,32 @@ module.exports = function (app) {
         });
     });
 
-    // PUT route for updating posts
+    // PUT ROUTE FOR UPDATING POSTS
+    app.put("/api/recipes/edit/:id", function (req, res) {
+        db.Recipe.update(
+            req.body.recipe_name, {
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (dbPost) {
+            res.json(dbPost);
+        });
+    });
+
     app.put("/api/recipes/edit/:id", function (req, res) {
         db.Ingredient.update(
-            req.body, {
+            req.body.ingredint_info, {
                 where: {
                     id: req.body.id
                 }
             }).then(function (dbPost) {
             res.json(dbPost);
         });
+    });
 
+    app.put("/api/recipes/edit/:id", function (req, res) {
         db.Instruction.update(
-            req.body, {
+            req.body.instruction_info, {
                 where: {
                     id: req.body.id
                 }
