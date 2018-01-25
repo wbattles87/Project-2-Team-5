@@ -33,6 +33,11 @@ $(document).ready(function () {
         ev.target.parentElement.classList.toggle("checked");
     });
 
+    //Logout Button
+    $(".logoutBtn").on("click", function () {
+        location.href = "/";
+    });
+
     //Delete Ajax (DELETE) Calls
     $(".recipeDelete").on("click", function () {
         var id = $(this).attr("data-id");
