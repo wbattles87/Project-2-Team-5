@@ -47,7 +47,7 @@
                 {{recipes.recipe_name}} {{#each recipe_data}} {{#unless recipe_checkbox}}
                 <tr>
                     <td>
-                        <a class="recipeName">{{this.recipe_name}}</a>
+                        <a class="recipeName" href="/recipe/{{this.id}}">{{this.recipe_name}}</a>
                     </td>
                     <td>{{this.recipe_url}}</td>
                     <td>
@@ -74,7 +74,7 @@
                 {{#each recipe_data}} {{#if recipe_checkbox}}
                 <tr>
                     <td>
-                        <a class="recipeName">{{this.recipe_name}}</a>
+                        <a class="recipeName" href="/recipe/{{this.id}}">{{this.recipe_name}}</a>
                     </td>
                     <td>{{this.recipe_url}}</td>
                     <td>
