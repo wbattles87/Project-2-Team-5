@@ -8,18 +8,6 @@ $(document).ready(function () {
         });
     });
 
-    //NavBar Logo to return to Homepage
-    $("#navbarlogo").on("click", function () {
-        $.ajax({
-            url: `/`,
-            method: "GET",
-        }).then(function (data) {
-            console.log(data);
-            console.log("Returning to Home");
-            $(".body-template").html(data); //need better way - should load original page/path
-        })
-    });
-
     //Recipe Search Function
     $(".search-button").on("click", function () {
         event.preventDefault();
@@ -45,14 +33,9 @@ $(document).ready(function () {
         ev.target.parentElement.classList.toggle("checked");
     });
 
-    //Recipe -> Ingredient Button (convert to ingredient page when clicked)
-    $(".recipeName").on("click", function () {
-        $.ajax({
-            url: `/recipe/${$(this).attr("data-id")}`,
-            method: "GET"
-        }).then(function (data) {
-            console.log("Then data: " + data);
-        })
+    //Logout Button
+    $(".logoutBtn").on("click", function () {
+        location.href = "/";
     });
 
     //Delete Ajax (DELETE) Calls
@@ -70,12 +53,16 @@ $(document).ready(function () {
     //Toggle Recipe complete
     $(".recipeComplete").on("click", function () {
         var id = $(this).data("id");
+        var recipe_checkbox = $(this).data("checkbox");
+        var recipeState;
 
-        console.log(id);
+        console.log(recipe_checkbox);
 
-        var recipeState = {
-            recipe_checkbox: true,
-        };
+        if (recipe_checkbox === true) {
+            recipeState = {recipe_checkbox: false};
+        } else {
+            recipeState = {recipe_checkbox: true};
+        }
 
         // Send the DELETE request.
         $.ajax("/api/recipes/update/" + id, {
@@ -84,8 +71,7 @@ $(document).ready(function () {
         }).then(
             function () {
                 console.log("Cooked recipe:", id);
-                // Reload the page to get the updated list
-                location.reload();
+                location.href = "/recipe";
             }
         );
     });

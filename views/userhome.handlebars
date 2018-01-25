@@ -1,11 +1,11 @@
 <nav class="navbar navbar-user">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand navbar-brand-user" id="navbarlogo" href="#">Recipeasy</a>
+            <a class="navbar-brand navbar-brand-user" id="navbarlogo" href="/recipe">Recipeasy</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a class="navtext navbar-right-user">LOGOUT</a>
+                <a class="navtext navbar-right-user logoutBtn">LOGOUT</a>
             </li>
         </ul>
     </div>
@@ -47,7 +47,7 @@
                 {{recipes.recipe_name}} {{#each recipe_data}} {{#unless recipe_checkbox}}
                 <tr>
                     <td>
-                        <a class="recipeName">{{this.recipe_name}}</a>
+                        <a class="recipeName" href="/recipe/{{this.id}}">{{this.recipe_name}}</a>
                     </td>
                     <td>{{this.recipe_url}}</td>
                     <td>
@@ -74,7 +74,7 @@
                 {{#each recipe_data}} {{#if recipe_checkbox}}
                 <tr>
                     <td>
-                        <a class="recipeName">{{this.recipe_name}}</a>
+                        <a class="recipeName" href="/recipe/{{this.id}}">{{this.recipe_name}}</a>
                     </td>
                     <td>{{this.recipe_url}}</td>
                     <td>

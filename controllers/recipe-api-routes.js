@@ -25,10 +25,10 @@ module.exports = function (app) {
         db.Recipe.findOne({
             where: {
                 id: req.params.id
-            },
+            }, 
         }).then(function (data) {
             return data.update({
-                recipe_checkbox: true
+                recipe_checkbox: req.body.recipe_checkbox
             });
         }).then(function (record) {
             res.sendStatus(200);
