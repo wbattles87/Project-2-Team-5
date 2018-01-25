@@ -13,7 +13,7 @@
 
 <div class="container">
     <h1 class="ingredient-title">INGREDIENT TITLE</h1>
-    <p class="ingredient-text">serving size</p>
+    <!--<p class="ingredient-text">serving size</p>-->
     <h3 class="ingredient-header">INGREDIENTS</h3>
     <div class="ingredients-list ingredient-text">
         {{#each recipe_data.Ingredients}}
@@ -31,7 +31,7 @@
     <p class="ingredient-text">
         {{#each recipe_data.Instructions}}
             <div class="row">
-                <div class="col-sm-11">
+                <div class="col-sm-11 instructionInfo">
                     {{this.instruction_info}}
                 </div>
             </div>
