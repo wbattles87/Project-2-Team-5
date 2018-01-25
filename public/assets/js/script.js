@@ -67,6 +67,11 @@ $(document).ready(function () {
             })
     });
 
+    //Toggle Recipe complete
+    $(".recipeComplete").on("click", function () {
+       
+    });
+
     //Edit Ajax (PUT) Calls
     $(".recipeEdit").on("click", function () {
         $.ajax({
