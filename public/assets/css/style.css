@@ -364,9 +364,10 @@ th {
 
 /* ===============================================INGREDIENT PAGE ================================================ */
 .ingredient-title {
-  font-size: 5rem;
-  letter-spacing: 1rem;
+  font-size: 6.5rem;
+  letter-spacing: 0.3rem;
   color: #E44125;
+  text-transform: uppercase;
   margin-top: 6rem; }
 
 .ingredient-header {
