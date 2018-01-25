@@ -53,12 +53,16 @@ $(document).ready(function () {
     //Toggle Recipe complete
     $(".recipeComplete").on("click", function () {
         var id = $(this).data("id");
+        var recipe_checkbox = $(this).data("checkbox");
+        var recipeState;
 
-        console.log(id);
+        console.log(recipe_checkbox);
 
-        var recipeState = {
-            recipe_checkbox: true,
-        };
+        if (recipe_checkbox === true) {
+            recipeState = {recipe_checkbox: false};
+        } else {
+            recipeState = {recipe_checkbox: true};
+        }
 
         // Send the DELETE request.
         $.ajax("/api/recipes/update/" + id, {
@@ -68,7 +72,6 @@ $(document).ready(function () {
             function () {
                 console.log("Cooked recipe:", id);
                 location.href = "/recipe";
-                // Reload the page to get the updated list
             }
         );
     });
