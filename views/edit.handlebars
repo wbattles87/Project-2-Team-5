@@ -1,0 +1,29 @@
+<nav class="navbar navbar-user">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-brand-user" id="navbarlogo" href="/recipe">Recipeasy</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a class="navtext navbar-right-user logoutBtn">LOGOUT</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <form id="cms">
+        <div class="form-group">
+            <label for="title">Recipe Name</label>
+            <input value="{{recipe_data.recipe_name}}" type="text" class="form-control" id="title">
+            <br />
+            <label for="body">Ingredients</label>
+            <textarea class="form-control" rows="20" id="body">{{#each recipe_data.Ingredients}}{{ingredient_info}}{{/each}}</textarea>
+            <br />
+            <label for="body">Instructions</label>
+            <textarea value="{{recipe_data.Instructions}}" placeholder="Instruction List" class="form-control" rows="20" id="body">{{#each recipe_data.Instructions}}{{instruction_info}}{{/each}}</textarea>
+            <br />
+            <button type="submit" class="btn ingredient-btn submit">Submit</button>
+        </div>
+    </form>
+</div>

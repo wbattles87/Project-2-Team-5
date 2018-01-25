@@ -25,13 +25,34 @@ module.exports = function (app) {
         db.Recipe.findOne({
             where: {
                 id: req.params.id
-            }, 
+            },
         }).then(function (data) {
             return data.update({
                 recipe_checkbox: req.body.recipe_checkbox
             });
         }).then(function (record) {
             res.sendStatus(200);
+        });
+    });
+
+    // PUT route for updating posts
+    app.put("/api/recipes/edit/:id", function (req, res) {
+        db.Ingredient.update(
+            req.body, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbPost) {
+            res.json(dbPost);
+        });
+
+        db.Instruction.update(
+            req.body, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbPost) {
+            res.json(dbPost);
         });
     });
 
@@ -92,18 +113,24 @@ module.exports = function (app) {
                         })
                         .then(function (responseRecipe) {
                             var recipeId = responseRecipe.dataValues.id; //user reicpe id of ingr and instr
-                            
+
                             var ingredsArrayTemp = parseItempropIngredients($, recipeId);
-                            if(!ingredsArrayTemp.length){ //check if no ingreds
-                                ingredsArrayTemp[0] = { ingredient_info:"No Ingredients Detected", RecipeId: recipeId };
+                            if (!ingredsArrayTemp.length) { //check if no ingreds
+                                ingredsArrayTemp[0] = {
+                                    ingredient_info: "No Ingredients Detected",
+                                    RecipeId: recipeId
+                                };
                             }
-                            db.Ingredient.bulkCreate( ingredsArrayTemp , {
+                            db.Ingredient.bulkCreate(ingredsArrayTemp, {
                                     individualHooks: true
                                 })
                                 .then(function (responseIngredient) {
                                     var instructionsArrayTemp = parseItempropInstructions($, recipeId);
-                                    if(!instructionsArrayTemp.length){ //check if no instructions
-                                        instructionsArrayTemp[0] = { instruction_info:"No Instructions Detected", RecipeId: recipeId };
+                                    if (!instructionsArrayTemp.length) { //check if no instructions
+                                        instructionsArrayTemp[0] = {
+                                            instruction_info: "No Instructions Detected",
+                                            RecipeId: recipeId
+                                        };
                                     }
                                     db.Instruction.bulkCreate(instructionsArrayTemp, {
                                             individualHooks: true
@@ -152,29 +179,32 @@ function parseItempropIngredients($, recipeId) {
     var jsonFound = false;
 
     //Look for JSON object in page
-    $("script").each(function(){ 
-        if( $(this).attr("type") === "application/ld+json" ){
-          if( JSON.parse( $(this).html() )["@type"] === "Recipe" ){
-            if( JSON.parse( $(this).html() )["recipeIngredient"] ){
-                ingredientsArray = JSON.parse( $(this).html() )["recipeIngredient"];
-                jsonFound = true;
-                console.log(ingredientsArray);    
-            }else 
-              console.log("No Ingredients");
-          }else 
-            console.log("No Recipe in JSON OBJ");
-        }else  
+    $("script").each(function () {
+        if ($(this).attr("type") === "application/ld+json") {
+            if (JSON.parse($(this).html())["@type"] === "Recipe") {
+                if (JSON.parse($(this).html())["recipeIngredient"]) {
+                    ingredientsArray = JSON.parse($(this).html())["recipeIngredient"];
+                    jsonFound = true;
+                    console.log(ingredientsArray);
+                } else
+                    console.log("No Ingredients");
+            } else
+                console.log("No Recipe in JSON OBJ");
+        } else
             console.log("No JSON Obj");
     });
 
-    if(jsonFound && ingredientsArray.length){ //push objects with RecipeID
-        for(let i=0; i<ingredientsArray.length; i++){
-            ingredientsArray[i] = { ingredient_info: ingredientsArray[i], RecipeId: recipeId };
+    if (jsonFound && ingredientsArray.length) { //push objects with RecipeID
+        for (let i = 0; i < ingredientsArray.length; i++) {
+            ingredientsArray[i] = {
+                ingredient_info: ingredientsArray[i],
+                RecipeId: recipeId
+            };
         }
     }
 
-    if(!ingredientsArray.length){ //check that no JSON obj in page then continue parsing
-    //$('[itemprop="ingredients"]')
+    if (!ingredientsArray.length) { //check that no JSON obj in page then continue parsing
+        //$('[itemprop="ingredients"]')
         $('[itemprop]').map(function (i, el) { //get list of elements with itemprop attr
             // this === el 
             if ($(this).attr("itemprop").match(/ngredient/)) //all itemprops that match I/ingredient
@@ -195,29 +225,31 @@ function parseItempropInstructions($, recipeId) {
     var jsonFound = false;
 
     //Look for JSON object in page
-    $("script").each(function(){ 
-        if( $(this).attr("type") === "application/ld+json" ){
-          if( JSON.parse( $(this).html() )["@type"] === "Recipe" ){
-            if( JSON.parse( $(this).html() )["recipeInstructions"] ){
-                instructionArrayClean = JSON.parse( $(this).html() )["recipeInstructions"].split(". ");
-                jsonFound = true;
-                console.log(instructionArrayClean);
-            }
-            else 
-              console.log("No Instructions");
-          }else 
-            console.log("No Recipe in JSON OBJ");
-        }else  
+    $("script").each(function () {
+        if ($(this).attr("type") === "application/ld+json") {
+            if (JSON.parse($(this).html())["@type"] === "Recipe") {
+                if (JSON.parse($(this).html())["recipeInstructions"]) {
+                    instructionArrayClean = JSON.parse($(this).html())["recipeInstructions"].split(". ");
+                    jsonFound = true;
+                    console.log(instructionArrayClean);
+                } else
+                    console.log("No Instructions");
+            } else
+                console.log("No Recipe in JSON OBJ");
+        } else
             console.log("No JSON Obj");
     });
 
-    if(jsonFound && instructionArrayClean.length){ //push objects with RecipeID
-        for(let i=0; i<instructionArrayClean.length; i++){
-            instructionArrayClean[i] = { instruction_info: (i+1) + ". " + instructionArrayClean[i] + ".", RecipeId: recipeId };
+    if (jsonFound && instructionArrayClean.length) { //push objects with RecipeID
+        for (let i = 0; i < instructionArrayClean.length; i++) {
+            instructionArrayClean[i] = {
+                instruction_info: (i + 1) + ". " + instructionArrayClean[i] + ".",
+                RecipeId: recipeId
+            };
         }
     }
 
-    if(!instructionArrayClean.length){ //if no JSON obj in page then continue parsing
+    if (!instructionArrayClean.length) { //if no JSON obj in page then continue parsing
         $('[itemprop]').map(function (i, el) { //get list of elements with itemprop attr
             // this === el
             if ($(this).attr("itemprop").match(/nstructions/)) { //all itemprops that match I/instructions

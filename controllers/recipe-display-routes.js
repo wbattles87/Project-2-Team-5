@@ -9,37 +9,6 @@ module.exports = function(app) {
         });
       });
 
-
-    app.get("/ingredient/:recipeId", function(req, res){
-        db.Recipe.findOne({
-        	where: {
-        		id: req.params.recipeId
-        	},
-        	include: [db.Ingredient]
-
-        }).then(function(result) {
-          console.log(result)
-            //res.render("recipe", { recipe_data: result }); //goes to recipes.handlebars
-            res.json(result);
-        });
-
-    });
-
-    app.get("/instruction/:recipeId", function(req, res){
-        db.Recipe.findOne({
-          where: {
-            id: req.params.recipeId
-          },
-          include: [db.Instruction]
-
-        }).then(function(result) {
-          console.log(result)
-            //res.render("recipe", { recipe_data: result }); //goes to recipes.handlebars
-            res.json(result);
-        });
-
-    });
-
   app.get("/recipe/:recipeId", function(req, res){
     db.Recipe.findOne({
       where: {
@@ -55,6 +24,24 @@ module.exports = function(app) {
         //res.json(result)
         //res.render("ingredientpage", {ingredients: [result], instructions: [result]});
         res.render("ingredientpage", { recipe_data: result });
+    });
+  });
+
+  app.get("/recipe/edit/:recipeId", function(req, res){
+    db.Recipe.findOne({
+      where: {
+        id: req.params.recipeId
+      },
+      include: [
+        { model: db.Ingredient },
+        { model: db.Instruction}
+      ]
+    }).then(function(result) {
+        console.log(result)
+        //res.render("recipe", { recipe_data: result }); //goes to recipes.handlebars
+        //res.json(result)
+        //res.render("ingredientpage", {ingredients: [result], instructions: [result]});
+        res.render("edit", { recipe_data: result });
     });
   });
 
