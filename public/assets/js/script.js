@@ -62,8 +62,8 @@ $(document).ready(function () {
         }).then(
             function () {
                 console.log("Cooked recipe:", id);
+                location.href = "/recipe";
                 // Reload the page to get the updated list
-                location.reload();
             }
         );
     });
