@@ -5,7 +5,7 @@ module.exports = function(app) {
     app.get("/recipe", function(req, res){
         //check that logged in. pass user_id to callback
         db.Recipe.findAll({}).then(function(result) {
-            res.render("recipes", { recipe_data: result }); //goes to recipes.handlebars
+            res.render("userhome", { recipe_data: result }); //goes to recipes.handlebars
         });
       });
 

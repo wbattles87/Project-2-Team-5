@@ -44,17 +44,18 @@
                 </tr>
             </thead>
             <tbody>
-                {{recipes.recipe_name}}
-                {{#each recipes}}
+                {{recipes.recipe_name}} {{#each recipe_data}} {{#unless recipe_checkbox}}
                 <tr>
-                    <td><a class="recipeName">{{this.recipe_name}}</a></td>
+                    <td>
+                        <a class="recipeName">{{this.recipe_name}}</a>
+                    </td>
                     <td>{{this.recipe_url}}</td>
                     <td>
                         <a class="recipeName recipeDelete">delete</a>
                         <a class="recipeName recipeEdit">edit</a>
                     </td>
                 </tr>
-                {{/each}}
+                {{/unless}} {{/each}}
             </tbody>
         </table>
     </div>
@@ -70,17 +71,18 @@
                 </tr>
             </thead>
             <tbody>
-                {{recipes.recipe_name}}
-                {{#each recipes}}
+                {{#each recipe_data}} {{#if recipe_checkbox}}
                 <tr>
-                    <td><a class="recipeName">{{this.recipe_name}}</a></td>
+                    <td>
+                        <a class="recipeName">{{this.recipe_name}}</a>
+                    </td>
                     <td>{{this.recipe_url}}</td>
                     <td>
                         <a class="recipeName recipeDelete">delete</a>
                         <a class="recipeName recipeEdit">edit</a>
                     </td>
                 </tr>
-                {{/each}}
+                {{/if}} {{/each}}
             </tbody>
         </table>
     </div>
