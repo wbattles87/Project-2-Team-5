@@ -64,7 +64,7 @@ $(document).ready(function () {
         })
     });
 
-    //Delete Ajax (PUT) Calls
+    //Edit Ajax (PUT) Calls
     $(".recipeEdit").on("click", function() {
         $.ajax({
             url:`/burgers/eat/${$(this).attr("data-id")}`,
