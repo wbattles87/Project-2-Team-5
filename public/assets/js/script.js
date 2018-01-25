@@ -57,13 +57,37 @@ $(document).ready(function () {
 
     //Delete Ajax (DELETE) Calls
     $(".recipeDelete").on("click", function () {
-        var listItemData = $(this).parent("td").parent("tr").data("RecipeId");
-        var id = listItemData.id;
+        var id = $(this).attr("data-id");
+        console.log(id);
         $.ajax({
                 method: "DELETE",
-                url: "/api/authors/" + id
+                url: "/api/recipes/" + id
+            }).then(function(data) {
+                console.log("deleted recipe", id);
             })
-            .then(getAuthors);
+    });
+
+    //Toggle Recipe complete
+    $(".recipeComplete").on("click", function () {
+        var id = $(this).data("id");
+
+        console.log(id);
+
+        var recipeState = {
+            recipe_checkbox: true,
+        };
+
+        // Send the DELETE request.
+        $.ajax("/api/recipes/update/" + id, {
+            type: "PUT",
+            data: recipeState,
+        }).then(
+            function () {
+                console.log("Cooked recipe:", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
     });
 
     //Edit Ajax (PUT) Calls

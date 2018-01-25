@@ -15,8 +15,23 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             }
-        }).then(function (dbAuthor) {
-            res.json(dbAuthor);
+        }).then(function (data) {
+            console.log("recipe deleted")
+            res.json(data);
+        });
+    });
+
+    app.put("/api/recipes/update/:id", function (req, res) {
+        db.Recipe.findOne({
+            where: {
+                id: req.params.id
+            },
+        }).then(function (data) {
+            return data.update({
+                recipe_checkbox: true
+            });
+        }).then(function (record) {
+            res.sendStatus(200);
         });
     });
 
