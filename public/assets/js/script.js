@@ -8,18 +8,6 @@ $(document).ready(function () {
         });
     });
 
-    //NavBar Logo to return to Homepage
-    $("#navbarlogo").on("click", function () {
-        $.ajax({
-            url: `/`,
-            method: "GET",
-        }).then(function (data) {
-            console.log(data);
-            console.log("Returning to Home");
-            $(".body-template").html(data); //need better way - should load original page/path
-        })
-    });
-
     //Recipe Search Function
     $(".search-button").on("click", function () {
         event.preventDefault();
