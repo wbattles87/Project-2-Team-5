@@ -45,9 +45,7 @@ module.exports = function (app) {
             }).then(function (dbPost) {
             res.json(dbPost);
         });
-    });
 
-    app.put("/api/recipes/edit/:id", function (req, res) {
         db.Ingredient.update(
             req.body.ingredint_info, {
                 where: {
@@ -56,9 +54,7 @@ module.exports = function (app) {
             }).then(function (dbPost) {
             res.json(dbPost);
         });
-    });
 
-    app.put("/api/recipes/edit/:id", function (req, res) {
         db.Instruction.update(
             req.body.instruction_info, {
                 where: {

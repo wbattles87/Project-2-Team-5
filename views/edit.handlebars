@@ -12,7 +12,7 @@
 </nav>
 
 <div class="container">
-    <form id="cms">
+    <form id="cms" action="/api/recipes/edit/" method="PUT">
         <div class="form-group">
             <label for="title">Recipe Name</label>
             <input value="{{recipe_data.recipe_name}}" type="text" class="form-control" id="editTitle">
