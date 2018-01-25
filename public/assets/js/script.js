@@ -43,11 +43,11 @@ $(document).ready(function () {
         var id = $(this).attr("data-id");
         console.log(id);
         $.ajax({
-                method: "DELETE",
-                url: "/api/recipes/" + id
-            }).then(function(data) {
-                console.log("deleted recipe", id);
-            })
+            method: "DELETE",
+            url: "/api/recipes/" + id
+        }).then(function (data) {
+            console.log("deleted recipe", id);
+        })
     });
 
     //Toggle Recipe complete
@@ -59,9 +59,13 @@ $(document).ready(function () {
         console.log(recipe_checkbox);
 
         if (recipe_checkbox === true) {
-            recipeState = {recipe_checkbox: false};
+            recipeState = {
+                recipe_checkbox: false
+            };
         } else {
-            recipeState = {recipe_checkbox: true};
+            recipeState = {
+                recipe_checkbox: true
+            };
         }
 
         // Send the DELETE request.
@@ -76,14 +80,38 @@ $(document).ready(function () {
         );
     });
 
-    //Edit Ajax (PUT) Calls
+    //EDIT BUTTON
     $(".recipeEdit").on("click", function () {
+        var id = $(this).data("id");
+        console.log(id);
+        location.href = "/recipe/edit/" + id;
+    });
+
+    //EDIT FORM SUMBITS
+    $(".editSubmit").on("click", function (post) {
+        var id = $(this).data("Id");
+        var ingredientId = $(this).data("ingredientId");
+
+        var newTitle = $("#editTitle").val();
+        var newIngredient = $("#editIngredient").val();
+        var newInstruction = $("#editInstruction").val();
+
         $.ajax({
-            url: `/burgers/eat/${$(this).attr("data-id")}`,
-            method: "PUT"
-        }).then(function (data) {
-            console.log("Then data: " + data);
-            location.reload();
+            method: "PUT",
+            url: "/api/recipes/edit/" + ingredientid,
+            data: post
         })
+        .then(function () {
+            window.location.href = "/recipe/" + id;
+        });
+
+        $.ajax({
+            method: "PUT",
+            url: "/api/recipes/edit/" + ingredientid,
+            data: post
+        })
+        .then(function () {
+            window.location.href = "/recipe/" + id;
+        });
     });
 });

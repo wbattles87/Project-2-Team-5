@@ -12,7 +12,7 @@
 </nav>
 
 <div class="container">
-    <form>
+    <!-- <form>
         <div class="input-group searchaddbar">
             <input type="text" class="form-control input-md" id="userSearch" placeholder="Search Your Recipe" />
             <span class="input-group-btn">
@@ -21,7 +21,7 @@
                 </button>
             </span>
         </div>
-    </form>
+    </form> -->
     <form action="/api/recipe" method="POST">
         <div class="input-group searchaddbar">
             <input type="text" id="recipe_url" name="recipe_url" class="form-control input-md" placeholder="Recipe URL" />
@@ -39,7 +39,7 @@
             <thead>
                 <tr>
                     <th>TITLE</th>
-                    <th>SOURCE</th>
+                    <th class="sourceInfo">SOURCE</th>
                     <th>ACTION</th>
                 </tr>
             </thead>
@@ -49,10 +49,10 @@
                     <td>
                         <a class="recipeName" href="/recipe/{{this.id}}">{{this.recipe_name}}</a>
                     </td>
-                    <td>{{this.recipe_url}}</td>
+                    <td class="sourceInfo">{{this.recipe_url}}</td>
                     <td>
                         <a class="recipeName recipeDelete" data-id="{{this.id}}">delete</a>
-                        <a class="recipeName recipeEdit">edit</a>
+                        <a class="recipeName recipeEdit" data-id="{{this.id}}">edit</a>
                     </td>
                 </tr>
                 {{/unless}} {{/each}}
@@ -66,7 +66,7 @@
             <thead>
                 <tr>
                     <th>TITLE</th>
-                    <th>SOURCE</th>
+                    <th class="sourceInfo">SOURCE</th>
                     <th>ACTION</th>
                 </tr>
             </thead>
@@ -76,7 +76,7 @@
                     <td>
                         <a class="recipeName" href="/recipe/{{this.id}}">{{this.recipe_name}}</a>
                     </td>
-                    <td>{{this.recipe_url}}</td>
+                    <td class="sourceInfo">{{this.recipe_url}}</td>
                     <td>
                         <a class="recipeName recipeDelete" data-id="{{this.id}}">delete</a>
                         <a class="recipeName recipeEdit">edit</a>

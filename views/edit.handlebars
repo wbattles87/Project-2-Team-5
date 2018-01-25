@@ -1,0 +1,33 @@
+<nav class="navbar navbar-user">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-brand-user" id="navbarlogo" href="/recipe">Recipeasy</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a class="navtext navbar-right-user logoutBtn">LOGOUT</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <form id="cms" action="/api/recipes/edit/" method="PUT">
+        <div class="form-group">
+            <label for="title">Recipe Name</label>
+            <input value="{{recipe_data.recipe_name}}" type="text" class="form-control" id="editTitle">
+            <br />
+            <label for="body">Ingredients</label>
+            {{#each recipe_data.Ingredients}}
+            <input value="{{this.ingredient_info}}" data-ingredientID="{{this.id}}" type="text" class="form-control" id="editIngredient">
+            {{/each}}
+            <br />
+            <label for="body">Instructions</label>
+            {{#each recipe_data.Instructions}}
+            <textarea type="text" class="form-control" data-ingredientID="{{this.id}}" id="editInstruction" rows="10">{{this.instruction_info}}</textarea>
+            {{/each}}
+            <br />
+            <button type="submit" class="btn ingredient-btn editSubmit" data-id="{{recipe_data.id}}">Submit</button>
+        </div>
+    </form>
+</div>
