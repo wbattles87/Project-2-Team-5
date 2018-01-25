@@ -217,10 +217,27 @@
         height: 2.5rem;
         padding-right: 3rem;
     }
+
+    .sourceInfo {
+        display: none;
+    }
     /* ===============================================INGREDIENT PAGE================================================ */
     .ingredient-btn {
         padding: 1rem;
         margin-right: 0.5rem;
+    }
+
+    .ingredient-title {
+        font-size: 5rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .ingredient-text {
+        font-size: 2rem;
+    }
+
+    .instructionInfo {
+        font-size: 2rem;
     }
 }
 
