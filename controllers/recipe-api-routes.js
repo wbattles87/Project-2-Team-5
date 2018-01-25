@@ -90,7 +90,14 @@ module.exports = function (app) {
                                                 ingredients: responseIngredient,
                                                 instructions: responseInstruction
                                             };
-                                            res.json(bigObject); //returns Instructions object
+                                            //console.log(bigObject);
+                                            /*res.json( { 
+                                                recipeId: responseRecipe.id,
+                                                recipeName: responseRecipe.recipe_name,
+                                                recipeUrl: `/recipe/${responseRecipe.id}`
+                                            });*/ //returns Response object
+                                            res.redirect(`/recipe/${responseRecipe.id}`);
+
                                         })
                                         .catch(function (error) {
                                             res.json(error);
