@@ -80,20 +80,18 @@ $(document).ready(function () {
         );
     });
 
-    //Edit Ajax (PUT) Calls
+    //EDIT BUTTON
     $(".recipeEdit").on("click", function () {
-        $.ajax({
-            url: `/burgers/eat/${$(this).attr("data-id")}`,
-            method: "PUT"
-        }).then(function (data) {
-            console.log("Then data: " + data);
-            location.reload();
-        })
+        var id = $(this).data("id");
+        console.log(id);
+        location.href = "/recipe/edit/" + id;
     });
 
     //EDIT FORM SUMBITS
     $(".editSubmit").on("click", function (post) {
-        var id = $(this).data("id");
+        var id = $(this).data("Id");
+        var ingredinetId = $(this).data("ingredientId");
+        var post;
         
         var newTitle = $("#editTitle").val();
         var newIngredient = $("#editIngredient").val();

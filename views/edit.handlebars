@@ -19,15 +19,15 @@
             <br />
             <label for="body">Ingredients</label>
             {{#each recipe_data.Ingredients}}
-            <input value="{{this.ingredient_info}}" type="text" class="form-control" id="editIngredient">
+            <input value="{{this.ingredient_info}}" data-ingredientID="{{this.id}}" type="text" class="form-control" id="editIngredient">
             {{/each}}
             <br />
             <label for="body">Instructions</label>
             {{#each recipe_data.Instructions}}
-            <textarea type="text" class="form-control" id="editInstruction" rows="10">{{this.instruction_info}}</textarea>
+            <textarea type="text" class="form-control" data-ingredientID="{{this.id}}" id="editInstruction" rows="10">{{this.instruction_info}}</textarea>
             {{/each}}
             <br />
-            <button type="submit" class="btn ingredient-btn editSubmit">Submit</button>
+            <button type="submit" class="btn ingredient-btn editSubmit" data-id="{{recipe_data.id}}">Submit</button>
         </div>
     </form>
 </div>
