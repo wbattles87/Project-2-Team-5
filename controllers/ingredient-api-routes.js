@@ -18,8 +18,7 @@ module.exports = function (app) {
         //add ingredients
         console.log(req.body);
         db.Ingredient.create(req.body).then(function (Ingredient) {
-            res.json(Ingredient);
+            res.json(Ingredient); //Says RecipeId cannot be null...even when there's a number.
         });
     });
-
 };
