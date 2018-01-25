@@ -15,15 +15,19 @@
     <form id="cms">
         <div class="form-group">
             <label for="title">Recipe Name</label>
-            <input value="{{recipe_data.recipe_name}}" type="text" class="form-control" id="title">
+            <input value="{{recipe_data.recipe_name}}" type="text" class="form-control" id="editTitle">
             <br />
             <label for="body">Ingredients</label>
-            <textarea class="form-control" rows="20" id="body">{{#each recipe_data.Ingredients}}{{ingredient_info}}{{/each}}</textarea>
+            {{#each recipe_data.Ingredients}}
+            <input value="{{this.ingredient_info}}" type="text" class="form-control" id="editIngredient">
+            {{/each}}
             <br />
             <label for="body">Instructions</label>
-            <textarea value="{{recipe_data.Instructions}}" placeholder="Instruction List" class="form-control" rows="20" id="body">{{#each recipe_data.Instructions}}{{instruction_info}}{{/each}}</textarea>
+            {{#each recipe_data.Instructions}}
+            <textarea type="text" class="form-control" id="editInstruction" rows="10">{{this.instruction_info}}</textarea>
+            {{/each}}
             <br />
-            <button type="submit" class="btn ingredient-btn submit">Submit</button>
+            <button type="submit" class="btn ingredient-btn editSubmit">Submit</button>
         </div>
     </form>
 </div>

@@ -43,11 +43,11 @@ $(document).ready(function () {
         var id = $(this).attr("data-id");
         console.log(id);
         $.ajax({
-                method: "DELETE",
-                url: "/api/recipes/" + id
-            }).then(function(data) {
-                console.log("deleted recipe", id);
-            })
+            method: "DELETE",
+            url: "/api/recipes/" + id
+        }).then(function (data) {
+            console.log("deleted recipe", id);
+        })
     });
 
     //Toggle Recipe complete
@@ -59,9 +59,13 @@ $(document).ready(function () {
         console.log(recipe_checkbox);
 
         if (recipe_checkbox === true) {
-            recipeState = {recipe_checkbox: false};
+            recipeState = {
+                recipe_checkbox: false
+            };
         } else {
-            recipeState = {recipe_checkbox: true};
+            recipeState = {
+                recipe_checkbox: true
+            };
         }
 
         // Send the DELETE request.
@@ -85,5 +89,23 @@ $(document).ready(function () {
             console.log("Then data: " + data);
             location.reload();
         })
+    });
+
+    //EDIT FORM SUMBITS
+    $(".editSubmit").on("click", function (post) {
+        var id = $(this).data("id");
+        
+        var newTitle = $("#editTitle").val();
+        var newIngredient = $("#editIngredient").val();
+        var newInstruction = $("#editInstruction").val();
+
+        $.ajax({
+            method: "PUT",
+            url: "/api/recipes/edit/" + id,
+            data: post
+        })
+        .then(function () {
+            window.location.href = "/recipe/" + id;
+        });
     });
 });
