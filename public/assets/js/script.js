@@ -69,7 +69,25 @@ $(document).ready(function () {
 
     //Toggle Recipe complete
     $(".recipeComplete").on("click", function () {
-       
+        var id = $(this).data("id");
+
+        console.log(id);
+
+        var recipeState = {
+            recipe_checkbox: true,
+        };
+
+        // Send the DELETE request.
+        $.ajax("/api/recipes/update/" + id, {
+            type: "PUT",
+            data: recipeState,
+        }).then(
+            function () {
+                console.log("Cooked recipe:", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
     });
 
     //Edit Ajax (PUT) Calls
