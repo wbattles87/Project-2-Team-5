@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     //SIGN UP MODAL JAVASCRIPT
     $(".innersignuptext").click(function () {
         $('#signup-modal').trigger('click');
@@ -56,11 +57,10 @@ $(document).ready(function () {
     //Delete Ajax (DELETE) Calls
     $(".recipeDelete").on("click", function() {
         $.ajax({
-            url:`/burgers/eat/${$(this).attr("data-id")}`,
+            url:`/api/recipes/${$(this).attr("RecipeId")}`,
             method: "DELETE"
         }).then(function(data){
             console.log("Then data: " + data);
-            location.reload();
         })
     });
 
