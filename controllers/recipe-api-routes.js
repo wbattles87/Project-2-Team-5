@@ -67,7 +67,7 @@ module.exports = function (app) {
                         user_email: 'AUTOCREATED@EMAIL',
                         user_password: "AUTO CREATED PASS"
                     }
-                }).then(function (response) {
+                }).then(function (responseUser) {
                     //console.log(response);
 
                     db.Recipe.create({
@@ -75,17 +75,22 @@ module.exports = function (app) {
                             recipe_name: $("title").text().trim().substr(0, 60),
                             UserId: 1 //Test User
                         })
-                        .then(function (response) {
-                            var recipeId = response.dataValues.id;
+                        .then(function (responseRecipe) {
+                            var recipeId = responseRecipe.dataValues.id; //user reicpe id of ingr and instr
                             db.Ingredient.bulkCreate(parseItempropIngredients($, recipeId), {
                                     individualHooks: true
                                 })
-                                .then(function (response) {
+                                .then(function (responseIngredient) {
                                     db.Instruction.bulkCreate(parseItempropInstructions($, recipeId), {
                                             individualHooks: true
                                         })
-                                        .then(function (response) {
-                                            res.json(response); //returns Instructions object
+                                        .then(function (responseInstruction) {
+                                            var bigObject = {
+                                                recipe: responseRecipe,
+                                                ingredients: responseIngredient,
+                                                instructions: responseInstruction
+                                            };
+                                            res.json(bigObject); //returns Instructions object
                                         })
                                         .catch(function (error) {
                                             res.json(error);
