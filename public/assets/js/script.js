@@ -57,13 +57,14 @@ $(document).ready(function () {
 
     //Delete Ajax (DELETE) Calls
     $(".recipeDelete").on("click", function () {
-        var listItemData = $(this).parent("td").parent("tr").data("RecipeId");
-        var id = listItemData.id;
+        var id = $(this).attr("data-id");
+        console.log(id);
         $.ajax({
                 method: "DELETE",
-                url: "/api/authors/" + id
+                url: "/api/recipes/" + id
+            }).then(function(data) {
+                console.log("deleted recipe", id);
             })
-            .then(getAuthors);
     });
 
     //Edit Ajax (PUT) Calls
