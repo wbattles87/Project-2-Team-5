@@ -391,6 +391,13 @@ th {
 .ingredient-btn:hover {
   background-color: #6B7649; }
 
+.ingredientChecklist {
+  margin-top: 1.25rem; }
+
+.instructionInfo {
+  font-size: 2.25rem;
+  margin-top: 1.25rem; }
+
 .checked {
   color: #AAD037;
   text-decoration: line-through; }

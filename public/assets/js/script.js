@@ -48,11 +48,10 @@ $(document).ready(function () {
     //Recipe -> Ingredient Button (convert to ingredient page when clicked)
     $(".recipeName").on("click", function () {
         $.ajax({
-            url: `/burgers/eat/${$(this).attr("data-id")}`,
+            url: `/recipe/${$(this).attr("data-id")}`,
             method: "GET"
         }).then(function (data) {
             console.log("Then data: " + data);
-            location.reload();
         })
     });
 

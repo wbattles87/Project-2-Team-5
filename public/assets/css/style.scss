@@ -462,6 +462,15 @@ th {
     background-color: $green;
 }
 
+.ingredientChecklist {
+    margin-top: 1.25rem;
+}
+
+.instructionInfo {
+    font-size: 2.25rem;
+    margin-top: 1.25rem;
+}
+
 .checked {
     color: $lightgreen;
     text-decoration: line-through;
