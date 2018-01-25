@@ -39,7 +39,29 @@ module.exports = function(app) {
         });
 
     });
+
+  app.get("/recipe/:recipeId", function(req, res){
+    db.Recipe.findOne({
+      where: {
+        id: req.params.recipeId
+      },
+      include: [
+        { model: db.Ingredient },
+        { model: db.Instruction}
+      ]
+    }).then(function(result) {
+        console.log(result)
+        //res.render("recipe", { recipe_data: result }); //goes to recipes.handlebars
+        //res.json(result)
+        //res.render("ingredientpage", {ingredients: [result], instructions: [result]});
+        res.render("ingredientpage", { recipe_data: result });
+    });
+  });
+
 };
+
+
+
 
 /*
 db.Ingredients.findAll({
