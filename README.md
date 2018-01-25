@@ -4,7 +4,6 @@
 * Mark Kazanski - GitHub Master
 * Adeel Ahmed
 * Will Battles
-* Batli Joselevitz
 * Alize Nguyen - Project Manager
 
 ## Project Goal:
