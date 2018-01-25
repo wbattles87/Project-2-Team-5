@@ -33,16 +33,6 @@ $(document).ready(function () {
         ev.target.parentElement.classList.toggle("checked");
     });
 
-    //Recipe -> Ingredient Button (convert to ingredient page when clicked)
-    $(".recipeName").on("click", function () {
-        $.ajax({
-            url: `/recipe/${$(this).attr("data-id")}`,
-            method: "GET"
-        }).then(function (data) {
-            console.log("Then data: " + data);
-        })
-    });
-
     //Delete Ajax (DELETE) Calls
     $(".recipeDelete").on("click", function () {
         var id = $(this).attr("data-id");
