@@ -46,7 +46,10 @@ $(document).ready(function () {
             method: "DELETE",
             url: "/api/recipes/" + id
         }).then(function (data) {
-            console.log("deleted recipe", id);
+            console.log("deleted recipe: " +  id);
+            console.log(data);
+            alert(data);
+            location.href=("/recipe");
         })
     });
 

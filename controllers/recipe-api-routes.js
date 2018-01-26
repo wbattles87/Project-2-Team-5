@@ -11,14 +11,40 @@ module.exports = function (app) {
 
     // DELETES RECIPE
     app.delete("/api/recipes/:id", function (req, res) {
-        db.Recipe.destroy({
+
+        db.Ingredient.destroy({ //delete all Ingr
             where: {
-                id: req.params.id
+                RecipeId: req.params.id
             }
-        }).then(function (data) {
-            console.log("recipe deleted")
-            res.json(data);
+        }).then(function(dataIngr){
+            console.log(dataIngr);
+
+
+            db.Instruction.destroy({ //delete all Ingr
+                where: {
+                    RecipeId: req.params.id
+                }
+            }).then(function(dataInstr){
+                console.log(dataInstr);
+                try{
+                    db.Recipe.destroy({ //delete Ingr
+                        where: {
+                            id: req.params.id
+                        }
+                    }).then(function (dataRec) {
+                        console.log("recipe deleted: " +req.params.id);
+                        res.send("recipe deleted: " +req.params.id);
+                        //res.redirect("/recipe");
+                    });
+                }catch(err){
+                    console.log(err);
+                }
+
+            });
+            
         });
+
+        
     });
 
     app.put("/api/recipes/update/:id", function (req, res) {
