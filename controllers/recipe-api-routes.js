@@ -141,22 +141,12 @@ module.exports = function (app) {
                 //console.log(parseItempropIngredients($));
 
                 //console.log(parseItempropInstructions($));
-
-                db.User.findOrCreate({ //REMOVE THIS WHEN USER LOGIN WORKS
-                    where: {
-                        id: req.user.id
-                    },
-                    defaults: {
-                        user_email: 'AUTOCREATED@EMAIL',
-                        user_password: "AUTO CREATED PASS"
-                    }
-                }).then(function (responseUser) {
-                    //console.log(response);
-
+                
+                if(req.user)
                     db.Recipe.create({
                             recipe_url: newUrl,
                             recipe_name: $("title").text().trim().substr(0, 60),
-                            UserId: req.user //get user
+                            UserId: req.user.id //get user
                         })
                         .then(function (responseRecipe) {
                             var recipeId = responseRecipe.dataValues.id; //user reicpe id of ingr and instr
@@ -210,7 +200,7 @@ module.exports = function (app) {
                             res.json(error);
                         });
 
-                });
+                //removed create user
 
 
             } //end succesfull response
