@@ -45,20 +45,24 @@ module.exports = function (app) {
             }).then(function (dbPost) {
             res.json(dbPost);
         });
+    });
 
+    app.put("/api/ingredients/edit/:id", function (req, res) {
         db.Ingredient.update(
             req.body.ingredint_info, {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             }).then(function (dbPost) {
             res.json(dbPost);
         });
+    });
 
+    app.put("/api/instructions/edit/:id", function (req, res) {
         db.Instruction.update(
             req.body.instruction_info, {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             }).then(function (dbPost) {
             res.json(dbPost);

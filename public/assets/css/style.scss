@@ -477,5 +477,13 @@ th {
     text-decoration: line-through;
 }
 
+/* ===============================================EDIT PAGE ================================================ */
+.editBtn {
+    font-family: $body-font;
+    color: $cream;
+    background-color: $orange;
+    padding: 0.5rem;
+}
+
 /* ======================================================================================================== */
 @import 'mediaqueries';

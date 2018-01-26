@@ -403,6 +403,13 @@ th {
   color: #AAD037;
   text-decoration: line-through; }
 
+/* ===============================================EDIT PAGE ================================================ */
+.editBtn {
+  font-family: Peleguer, serif;
+  color: #EEE5D0;
+  background-color: #F07222;
+  padding: 0.5rem; }
+
 /* ======================================================================================================== */
 @media only screen and (max-width: 1366px) {
   /*HOME PAGE*/
