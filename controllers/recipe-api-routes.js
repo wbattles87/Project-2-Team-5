@@ -65,6 +65,28 @@ module.exports = function (app) {
         });
     });
 
+    app.put("/api/ingredients/edit/:id", function (req, res) {
+        db.Ingredient.update(
+            req.body.ingredint_info, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbPost) {
+            res.json(dbPost);
+        });
+    });
+
+    app.put("/api/instructions/edit/:id", function (req, res) {
+        db.Instruction.update(
+            req.body.instruction_info, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbPost) {
+            res.json(dbPost);
+        });
+    });
+
     app.post("/api/recipe", function (req, res) {
         //add recipe
         //db.Recipe.create(...)
