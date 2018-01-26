@@ -123,10 +123,10 @@ $(document).ready(function () {
         console.log(ingredientid);
 
         var newIngredient = {
-            ingredient_info: $("#editIngredient").val(),
+            ingredient_info: $(`#editIngredient-${ingredientid}`).val(),
         };
 
-        console.log(newIngredient);
+        console.log(newIngredient.ingredient_info);
 
         $.ajax({
             method: "PUT",
@@ -134,7 +134,8 @@ $(document).ready(function () {
             data: newIngredient,
         })
         .then(function () {
-           window.location.href = "/recipe/" + id;
+            console.log("Igred updated: " + ingredientid);
+          // window.location.href = "/recipe/" + id;
         });
     });
 

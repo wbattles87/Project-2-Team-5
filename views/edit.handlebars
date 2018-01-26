@@ -27,7 +27,7 @@
             {{#each recipe_data.Ingredients}}
             <div class="row">
                 <div class="col-sm-11">
-                    <input value="{{this.ingredient_info}}" type="text" class="form-control" id="editIngredient">
+                    <input value="{{this.ingredient_info}}" type="text" class="form-control editIngredient" id="editIngredient-{{this.id}}">
                 </div>
                 <div class="col-sm-1">
                     <button class="btn editBtn ingredientBtn editSubmit" data-ingredientid="{{this.id}}" data-id="{{recipe_data.id}}">Submit</button>
