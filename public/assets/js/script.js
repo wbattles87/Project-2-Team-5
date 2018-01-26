@@ -1,3 +1,5 @@
+'use strict'
+
 $(document).ready(function () {
 
     //SIGN UP MODAL JAVASCRIPT
@@ -89,13 +91,21 @@ $(document).ready(function () {
 
     //EDIT FORM SUMBITS
     $(".titleBtn").on("click", function (post) {
+        event.preventDefault();
         var id = $(this).data("id");
         console.log(id);
+
+        var newTitle = $("#editTitle").val();
+        console.log(newTitle);
+
+        var newObject = {
+            recipe_name: newTitle,
+        };
 
         $.ajax({
             method: "PUT",
             url: "/api/recipes/edit/" + id,
-            data: post
+            data: newObject
         })
         .then(function () {
             window.location.href = "/recipe/" + id;
@@ -103,30 +113,42 @@ $(document).ready(function () {
     });
 
     $(".ingredientBtn").on("click", function () {
-        var id = $(this).data("id");
-        console.log(id);
+        event.preventDefault();
+        var id = $(this).attr("data-id");
 
-        var newTitle = $(".editTitle").val().trim();
-        console.log(newTitle);
+        var ingredientid = $(this).data("ingredientid");
+        console.log(ingredientid);
+
+        var newIngredient = {
+            ingredient_info: $("#editIngredient").val(),
+        };
+
+        console.log(newIngredient);
 
         $.ajax({
             method: "PUT",
-            url: "/api/ingredients/edit/" + id,
-            data: newTitle,
+            url: "/api/ingredients/edit/" + ingredientid,
+            data: newIngredient,
         })
         .then(function () {
-            window.location.href = "/recipe/" + id;
+           window.location.href = "/recipe/" + id;
         });
     });
 
     $(".instructionBtn").on("click", function (post) {
-        var id = $(this).data("id");
-        console.log(id);
+        event.preventDefault();
+        var id = $(this).attr("data-id");
+        var instructionid = $(this).data("instructionid");
+        console.log(instructionid);
+
+        var newInstruction = {
+            instruction_info: $("#editInstruction").val(),
+        }
 
         $.ajax({
             method: "PUT",
-            url: "/api/instructions/edit/" + id,
-            data: post
+            url: "/api/instructions/edit/" + instructionid,
+            data: newInstruction
         })
         .then(function () {
             window.location.href = "/recipe/" + id;
