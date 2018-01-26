@@ -1,22 +1,22 @@
 {
-  "name": "burger",
+  "name": "Recipeasy",
   "version": "1.0.0",
   "description": "## Team Members: * Mark Kazanski - GitHub Master * Adeel Ahmed * Will Battles * Alize Nguyen - Project Manager",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/markkazanski/burger.git"
+    "url": "git+https://github.com/markkazanski/Project-2-Team-5.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/markkazanski/burger/issues"
+    "url": "https://github.com/markkazanski/Project-2-Team-5/issues"
   },
-  "homepage": "https://github.com/markkazanski/burger#readme",
+  "homepage": "https://github.com/markkazanski/Project-2-Team-5#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
