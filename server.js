@@ -2,8 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 //requring models for syncing
 const db = require("./models");
-//require('dotenv').config({path: __dirname + './config/.env'});
-//we may need to figure out env variables for our local dbs
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
 //sets up express app
 var PORT = process.env.PORT || 8000;
@@ -12,7 +12,10 @@ var app = express();
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
-//require DB's once setup
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
