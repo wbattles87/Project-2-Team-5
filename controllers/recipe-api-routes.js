@@ -37,34 +37,40 @@ module.exports = function (app) {
 
     // PUT ROUTE FOR UPDATING POSTS
     app.put("/api/recipes/edit/:id", function (req, res) {
-        db.Recipe.update(
-            req.body.recipe_name, {
+        db.Recipe.update({
+            recipe_name: req.body.recipe_name,
+        }, {
                 where: {
                     id: req.params.id
                 }
             }).then(function (dbPost) {
+            console.log("Edited went through");
             res.json(dbPost);
         });
     });
 
     app.put("/api/ingredients/edit/:id", function (req, res) {
-        db.Ingredient.update(
-            req.body.ingredint_info, {
+        db.Ingredient.update({
+            ingredient_info: req.body.ingredient_info,
+        }, {
                 where: {
                     id: req.params.id
                 }
             }).then(function (dbPost) {
+            console.log("Edited went through");
             res.json(dbPost);
         });
     });
 
     app.put("/api/instructions/edit/:id", function (req, res) {
-        db.Instruction.update(
-            req.body.instruction_info, {
+        db.Instruction.update({
+            instruction_info: req.body.instruction_info,
+        }, {
                 where: {
                     id: req.params.id
                 }
             }).then(function (dbPost) {
+            console.log("Edited went through");
             res.json(dbPost);
         });
     });
