@@ -7,8 +7,8 @@ module.exports = function (app) {
     app.get("/api/bookmarklet", function (req, res) {
         //add recipe
         //db.Recipe.create(...)
-        console.log("req.params.recipe_url " + req.params.recipe_url);
-        var newUrl = req.params.recipe_url;
+        console.log("req.query.recipe_url " + req.query.recipe_url);
+        var newUrl = req.query.recipe_url;
         //console.log(req.body);
         //var newUrl = "http://allrecipes.com/recipe/234610/cinnamon-oatmeal-bars/";
 
