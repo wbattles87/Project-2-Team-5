@@ -50,8 +50,6 @@ module.exports = function (app) {
     });
 
     app.put("/api/ingredients/edit/:id", function (req, res) {
-        console.log("*************");
-        console.log(req.body);
         db.Ingredient.update({
             ingredient_info: req.body.ingredient_info,
         }, {
