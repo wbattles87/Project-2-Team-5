@@ -1,15 +1,21 @@
 const db = require("../models");
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
 
-    app.get("/recipe", function(req, res){
+    app.get("/recipe", isAuthenticated, function(req, res){
         //check that logged in. pass user_id to callback
-        db.Recipe.findAll({}).then(function(result) {
+        db.Recipe.findAll({
+          where: {
+            UserId: req.user.id
+          }
+        }).then(function(result) {
             res.render("userhome", { recipe_data: result }); //goes to recipes.handlebars
         });
       });
 
-  app.get("/recipe/:recipeId", function(req, res){
+  app.get("/recipe/:recipeId", isAuthenticated, function(req, res){
     db.Recipe.findOne({
       where: {
         id: req.params.recipeId

@@ -1,6 +1,8 @@
 const db = require("../models");
 const request = require('request');
 const cheerio = require('cheerio');
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
 
@@ -101,7 +103,7 @@ module.exports = function (app) {
         });
     });
 
-    app.post("/api/recipe", function (req, res) {
+    app.post("/api/recipe", isAuthenticated, function (req, res) {
         //add recipe
         //db.Recipe.create(...)
         var newUrl = req.body.recipe_url;
@@ -133,7 +135,7 @@ module.exports = function (app) {
             if (error) throw error;
 
             // If the request was successful...
-            if (response.statusCode === 200) {
+            if (response.statusCode === 200 && req.user) {
                 const $ = cheerio.load(body); //load HTML into cheerio
 
                 //console.log(parseItempropIngredients($));
@@ -142,7 +144,7 @@ module.exports = function (app) {
 
                 db.User.findOrCreate({ //REMOVE THIS WHEN USER LOGIN WORKS
                     where: {
-                        id: '1'
+                        id: req.user.id
                     },
                     defaults: {
                         user_email: 'AUTOCREATED@EMAIL',
@@ -154,7 +156,7 @@ module.exports = function (app) {
                     db.Recipe.create({
                             recipe_url: newUrl,
                             recipe_name: $("title").text().trim().substr(0, 60),
-                            UserId: 1 //Test User
+                            UserId: req.user //get user
                         })
                         .then(function (responseRecipe) {
                             var recipeId = responseRecipe.dataValues.id; //user reicpe id of ingr and instr
