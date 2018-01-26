@@ -135,6 +135,7 @@ $(document).ready(function () {
         })
         .then(function () {
             console.log("Igred updated: " + ingredientid);
+            $(`#editIngredient-${ingredientid}`).css("font-weight", "bold");
           // window.location.href = "/recipe/" + id;
         });
     });

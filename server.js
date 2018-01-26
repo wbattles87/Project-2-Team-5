@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+var session = require("express-session");
 //requring models for syncing
 const db = require("./models");
 // Requiring passport as we've configured it
@@ -40,6 +41,8 @@ require("./controllers/recipe-api-routes.js")(app);
 require("./controllers/recipe-display-routes.js")(app);
 require("./controllers/user-api-routes.js")(app);
 require("./controllers/bookmarklet-routes.js")(app);
+require("./controllers/login-html-routes.js")(app);
+require("./controllers/login-api-routes.js")(app);
 
 //syncs sequelize models and waits till update complete before starting server
 db.sequelize.sync().then(function(){
