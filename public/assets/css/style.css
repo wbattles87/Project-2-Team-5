@@ -260,7 +260,7 @@ footer {
 /* MODAL CONTENT (HOME) */
 .modal-dialog {
   width: 60%;
-  height: 80%;
+  height: 70%;
   opacity: 0.9; }
 
 .modal-content {
@@ -409,8 +409,6 @@ th {
   color: #EEE5D0;
   background-color: #F07222;
   padding: 0.5rem; }
-
-  .recipeEdit, .recipeDelete{ cursor: pointer; }
 
 /* ======================================================================================================== */
 @media only screen and (max-width: 1366px) {
