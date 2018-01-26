@@ -410,6 +410,8 @@ th {
   background-color: #F07222;
   padding: 0.5rem; }
 
+  .recipeEdit, .recipeDelete{ cursor: pointer; }
+
 /* ======================================================================================================== */
 @media only screen and (max-width: 1366px) {
   /*HOME PAGE*/

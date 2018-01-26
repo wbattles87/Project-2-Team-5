@@ -17,7 +17,8 @@ module.exports = function(sequelize, DataTypes){
         // A Ingredient can't be created without an Recipe due to the foreign key constraint
         Ingredient.belongsTo(models.Recipe, {
           foreignKey: {
-            allowNull: false
+            allowNull: false,
+            onDelete: "cascade"
           }
         });
       };
