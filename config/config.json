@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Arseface04!",
+    "database": "recipeasy_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "sfx5cs6f4jtuitij",
+    "password": "nsnlnluhbv42o516",
+    "database": "noghdfh5b8wk5py4",
+    "host": "uc13jynhmkss3nve.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}
