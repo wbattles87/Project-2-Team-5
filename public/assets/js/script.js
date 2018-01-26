@@ -88,26 +88,44 @@ $(document).ready(function () {
     });
 
     //EDIT FORM SUMBITS
-    $(".editSubmit").on("click", function (post) {
-        var id = $(this).data("Id");
-        var ingredientId = $(this).data("ingredientId");
-
-        var newTitle = $("#editTitle").val();
-        var newIngredient = $("#editIngredient").val();
-        var newInstruction = $("#editInstruction").val();
+    $(".titleBtn").on("click", function (post) {
+        var id = $(this).data("id");
+        console.log(id);
 
         $.ajax({
             method: "PUT",
-            url: "/api/recipes/edit/" + ingredientid,
+            url: "/api/recipes/edit/" + id,
             data: post
         })
         .then(function () {
             window.location.href = "/recipe/" + id;
         });
+    });
+
+    $(".ingredientBtn").on("click", function () {
+        var id = $(this).data("id");
+        console.log(id);
+
+        var newTitle = $(".editTitle").val().trim();
+        console.log(newTitle);
 
         $.ajax({
             method: "PUT",
-            url: "/api/recipes/edit/" + ingredientid,
+            url: "/api/ingredients/edit/" + id,
+            data: newTitle,
+        })
+        .then(function () {
+            window.location.href = "/recipe/" + id;
+        });
+    });
+
+    $(".instructionBtn").on("click", function (post) {
+        var id = $(this).data("id");
+        console.log(id);
+
+        $.ajax({
+            method: "PUT",
+            url: "/api/instructions/edit/" + id,
             data: post
         })
         .then(function () {

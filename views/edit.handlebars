@@ -20,7 +20,7 @@
                     <input value="{{recipe_data.recipe_name}}" type="text" class="form-control" id="editTitle">
                 </div>
                 <div class="col-sm-1">
-                    <button type="submit" class="btn editBtn editSubmit" data-id="{{recipe_data.id}}">Submit</button>
+                    <button type="submit" class="btn editBtn  titleBtn editSubmit" data-id="{{recipe_data.id}}">Submit</button>
                 </div>
             </div>
             <br />
@@ -31,7 +31,7 @@
                     <input value="{{this.ingredient_info}}" data-ingredientID="{{this.id}}" type="text" class="form-control" id="editIngredient">
                 </div>
                 <div class="col-sm-1">
-                    <button type="submit" class="btn editBtn editSubmit" data-id="{{this.id}}">Submit</button>
+                    <button type="submit" class="btn editBtn ingredientBtn editSubmit" data-id="{{this.id}}">Submit</button>
                 </div>
             </div>
             {{/each}}
@@ -43,7 +43,7 @@
                     <textarea type="text" class="form-control" data-ingredientID="{{this.id}}" id="editInstruction" rows="10">{{this.instruction_info}}</textarea>
                 </div>
                 <div class="col-sm-1">
-                    <button type="submit" class="btn editBtn editSubmit" data-id="{{this.id}}">Submit</button>
+                    <button type="submit" class="btn editBtn instructionBtn editSubmit" data-id="{{this.id}}">Submit</button>
                 </div>
             </div>
             {{/each}}
