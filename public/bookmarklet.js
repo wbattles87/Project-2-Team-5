@@ -42,9 +42,9 @@ function sendBookmark(){
     });
   */
 
-  //GET
+  //GET //http://fierce-island-55952.herokuapp.com/api/bookmarklet
   jQuery.ajax({
-    url: `http://fierce-island-55952.herokuapp.com/api/bookmarklet?recipe_url=${newURL}`,
+    url: `http://localhost:8000/api/bookmarklet?recipe_url=${newURL}`,
     method: "GET",
     crossDomain: true
   }).done(function(response) {
