@@ -7,8 +7,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function (app) {
     app.get("/api/bookmarklet", isAuthenticated, function (req, res) {
         var newUrl = req.body.recipe_url;
-        newUrl = "http://www.seriouseats.com/2018/01/savory-bengali-rice-porridge-is-the-epitome-of-comfort-food.html";
-
+        
         request(newUrl, function (error, response, body) {
             if (error) throw error;
 
