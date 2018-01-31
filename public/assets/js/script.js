@@ -1,5 +1,3 @@
-'use strict'
-
 $(document).ready(function () {
 
     //SIGN UP MODAL JAVASCRIPT
@@ -32,7 +30,37 @@ $(document).ready(function () {
 
     //Ingredient To-Do List
     $(".ingredientChecklist").on("click", function (ev) {
-        ev.target.parentElement.classList.toggle("checked");
+        var checklist = $(this).attr("data-ingredientId");
+        var id = $(this).attr("data-id");
+        var ingredientState;
+
+        console.log(id);
+        console.log(checklist);
+
+        if (checklist === "true") {
+            ingredientState = {
+                ingredient_checkbox: 0
+            };
+
+            $(this).attr("data-ingredientId", "false")
+            ev.target.parentElement.classList.remove("checked");
+        } else if (checklist === "false") {
+            ingredientState = {
+                ingredient_checkbox: 1
+            };
+
+            $(this).attr("data-ingredientId", "true")
+            ev.target.parentElement.classList.add("checked");
+        }
+
+        $.ajax("/api/ingredients/got/" + id, {
+            type: "PUT",
+            data: ingredientState,
+        }).then(
+            function () {
+                console.log(checklist);
+            }
+        );
     });
 
     //Logout Button

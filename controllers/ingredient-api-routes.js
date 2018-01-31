@@ -21,4 +21,18 @@ module.exports = function (app) {
             res.json(Ingredient); //Says RecipeId cannot be null...even when there's a number.
         });
     });
+
+    app.put("/api/ingredients/got/:id", function (req, res) {
+        console.log(req.body.ingredient_checkbox);
+        db.Ingredient.update({
+            ingredient_checkbox: req.body.ingredient_checkbox,
+        }, {
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (dbPost) {
+            console.log("Made");
+            res.json(dbPost);
+        });
+    });
 };
