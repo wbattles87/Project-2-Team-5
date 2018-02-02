@@ -17,7 +17,7 @@
     <h3 class="ingredient-header">INGREDIENTS</h3>
     <div class="ingredients-list ingredient-text">
         {{#each recipe_data.Ingredients}}
-            <div class="row ingredientChecklist">
+            <div class="row ingredientChecklist {{#if this.ingredient_checkbox}}checked{{/if}}" data-ingredientId="{{this.ingredient_checkbox}}" data-id="{{this.id}}">
                 <div class="col-sm-1">
                     <i class="glyphicon glyphicon-ok"></i>
                 </div>
