@@ -29,6 +29,7 @@ $(document).ready(function () {
     });
 
     //Ingredient To-Do List
+
     $(".ingredientChecklist").on("click", function (ev) {
         var checklist = $(this).attr("data-ingredientId");
         var id = $(this).attr("data-id");
