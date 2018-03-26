@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "MyNewPass",
+    "password": "Chamois88",
     "database": "recipeasy_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
